@@ -882,3 +882,28 @@ spaces
         margin-bottom: 30px;
     }
 }
+
+/* L'elemento che farà da "mask" */
+#cursorCircle {
+    position: fixed;          /* Segue il cursore sullo schermo */
+    width: 150px;             /* Dimensione del cerchio (modifica se necessario) */
+    height: 150px;
+    border-radius: 50%;       /* Forma circolare */
+    pointer-events: none;     /* Non interferisce col mouse */
+    overflow: hidden;         /* Nasconde ciò che esce dal cerchio */
+    border: 3px solid #fff;   /* Bordo per evidenziare il cerchio (modifica il colore se desideri) */
+    z-index: 9999;            /* Assicurati che sia in primo piano */
+    display: none;            /* Inizialmente nascosto */
+    background: url('img/faces/customers/2.jpg') no-repeat; /* Sostituisci con il percorso del background (con del codice) */
+    background-size: 1400px 2099px; /* Dimensioni del background, che dovrebbero corrispondere all'immagine */
+}
+
+/* Esempio di area target che ha un overlay */
+.code-area {
+    position: relative;
+    overflow: hidden;
+    /* Ad esempio, un overlay che nasconde parzialmente il background */
+    background: url('img/faces/customers/2.jpg') no-repeat center/cover;
+    filter: brightness(0.5); /* Rende il background più scuro per evidenziare l'effetto */
+}
+
