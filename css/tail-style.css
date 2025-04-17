@@ -1,0 +1,4 @@
+/* Tailwind goes first */
+@import "tailwindcss";           /* v4 one‑liner */
+
+/* your custom CSS or SCSS‑compiled output can come after */
