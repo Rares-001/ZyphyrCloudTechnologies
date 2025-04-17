@@ -4228,3 +4228,102 @@ html.is-animating .mil-menu-frame {
   -webkit-transition-delay: 0.3s;
           transition-delay: 0.3s;
 }
+
+.matrix-wrapper {
+    position: relative;
+    display: inline-block;
+    margin: 0 .2em;
+    padding: .1em .3em;
+    /* white background (matches page) and a subtle border to define the “box” */
+    background: #fff;
+    border: 1px solid rgb(0, 49, 255);
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.matrix-text {
+    position: relative;
+    color: #ffffff;
+    font-family: monospace;
+    font-size: 1em;
+    z-index: 2;
+    pointer-events: none;
+    /* text‑shadow gives that neon glow */
+    text-shadow: 0 0 5px #000000, 0 0 10px #003cff;
+}
+
+/* rain lines confined to the wrapper */
+.matrix-wrapper .rain {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.06) 0,
+            rgba(255, 255, 255, 0.1) 2px,
+            transparent 4px
+    );
+    animation: rain 4s linear infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* simple clip‑shot so lines only show up inside the wrapper */
+.matrix-wrapper {
+    clip-path: inset(0);
+}
+
+@keyframes rain {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}
+
+/* glitch pseudo‑layer */
+.matrix-text::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    text-shadow: 0 0 3px #ff6200, 0 0 3px #000000;
+    clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+    transform: translate(-1px, -1px);
+    animation: glitch 3s infinite;
+}
+
+@keyframes glitch {
+    0%, 100% {
+        clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+        transform: none;
+    }
+    33% {
+        clip-path: polygon(0 0, 100% 0, 100% 15%, 0 15%);
+        transform: translate(-2px, -2px);
+    }
+    66% {
+        clip-path: polygon(0 85%, 100% 85%, 100% 100%, 0 100%);
+        transform: translate(2px, 2px);
+    }
+}
+
+.matrix-wrapper {
+    display: inline-block;
+    margin: 0; /* eliminate default inline-block gaps */
+    font-size: 1em; /* inherit size */
+    line-height: 1.4; /* match your paragraph */
+}
+
+.matrix-wrapper::before,
+.matrix-wrapper::after {
+    content: "";
+    display: none; /* ensure no pseudo‐elements add space */
+}

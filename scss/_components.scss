@@ -2614,3 +2614,141 @@ html.is-animating {
         transition-delay: .3s;
     }
 }
+
+/* ——— MATRIX RAIN & GLITCH EFFECT ——— */
+
+.matrix-container {
+    position: relative;
+    overflow: visible;   /* allow the rain & glitch to show */
+    padding: 120px 0;    /* if you don’t want full‑screen, use padding */
+    background: #111;    /* dark backdrop so green shows */
+}
+
+.matrix-text {
+    color: #0f0;
+    font-size: 2rem;
+    font-family: monospace;
+    position: relative;
+    text-shadow:
+            0 0 5px #0f0,
+            0 0 10px #0f0,
+            0 0 20px #0f0;
+    z-index: 2;
+    white-space: pre-wrap;
+}
+
+.matrix-text::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    animation: glitch 2s infinite;
+    clip-path: polygon(0 0,100% 0,100% 45%,0 45%);
+    transform: translate(-2px,-2px);
+    color: #0f0;
+    text-shadow:
+            0 0 3px #0f0,
+            0 0 8px #0f0;
+    z-index: 1;
+}
+
+.rain {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: repeating-linear-gradient(
+                    0deg,
+                    rgba(0,255,0,0.1) 0,
+                    rgba(0,255,0,0.2) 2px,
+                    transparent 4px
+    );
+    animation: rain 6s linear infinite;
+    z-index: 0;
+}
+
+@keyframes rain {
+    0%   { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+@keyframes glitch {
+    0%,100% {
+        clip-path: polygon(0 0,100% 0,100% 45%,0 45%);
+        transform: translate(0);
+    }
+    33% {
+        clip-path: polygon(0 0,100% 0,100% 15%,0 15%);
+        transform: translate(-5px,-5px);
+    }
+    66% {
+        clip-path: polygon(0 85%,100% 85%,100% 100%,0 100%);
+        transform: translate(5px,5px);
+    }
+}
+
+/* ——— Matrix debug & bring‑to‑front ——— */
+
+// Make sure this file is imported *after* variables, common & components
+.matrix-container {
+    position: relative;
+    z-index: 10 !important;
+    background: #111 !important;
+    padding: 60px 30px;
+    overflow: hidden;
+}
+
+.matrix-text {
+    color: #0f0;
+    font-size: 1.5rem;
+    font-family: monospace;
+    position: relative;
+    text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0;
+    z-index: 6 !important;
+}
+
+.matrix-text::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    animation: glitch 2s infinite;
+    clip-path: polygon(0 0,100% 0,100% 45%,0 45%);
+    transform: translate(-2px,-2px);
+    color: #0f0;
+    text-shadow: 0 0 3px #0f0, 0 0 8px #0f0;
+    z-index: 5;
+}
+
+.rain {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: repeating-linear-gradient(
+                    0deg,
+                    rgba(0,255,0,0.1) 0,
+                    rgba(0,255,0,0.2) 2px,
+                    transparent 4px
+    );
+    animation: rain 6s linear infinite;
+    z-index: 4 !important;
+}
+
+@keyframes rain {
+    0%   { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+@keyframes glitch {
+    0%,100% {
+        clip-path: polygon(0 0,100% 0,100% 45%,0 45%);
+        transform: translate(0);
+    }
+    33% {
+        clip-path: polygon(0 0,100% 0,100% 15%,0 15%);
+        transform: translate(-5px,-5px);
+    }
+    66% {
+        clip-path: polygon(0 85%,100% 85%,100% 100%,0 100%);
+        transform: translate(5px,5px);
+    }
+}

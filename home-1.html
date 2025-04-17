@@ -4,19 +4,19 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
 
-    <!-- bootstrap grid css -->`
-    <link rel="stylesheet" href="css/plugins/bootstrap-grid.css">
+    <!-- bootstrap grid css -->
+    <link href="css/plugins/bootstrap-grid.css" rel="stylesheet">
     <!-- font awesome css -->
-    <link rel="stylesheet" href="css/plugins/font-awesome.min.css">
-    <!-- swiper css -->zy
-    <link rel="stylesheet" href="css/plugins/swiper.min.css">
+    <link href="css/plugins/font-awesome.min.css" rel="stylesheet">
+    <!-- swiper css -->
+    <link href="css/plugins/swiper.min.css" rel="stylesheet">
     <!-- fancybox css -->
-    <link rel="stylesheet" href="css/plugins/fancybox.min.css">
+    <link href="css/plugins/fancybox.min.css" rel="stylesheet">
     <!-- ashley scss -->
-    <link rel="stylesheet" href="css/style.css">
+    <link href="css/style.css" rel="stylesheet">
     <!-- page name -->
     <title>Zyphyr Cloud Technologies</title>
 
@@ -85,7 +85,6 @@
                                         <ul>
                                             <li><a href="home-1.html">Welcome to the Future</a></li>
                                         </ul>
-
                                     </li>
                                     <li class="mil-has-children">
                                         <a href="#.">Innovative Portfolio</a>
@@ -280,6 +279,7 @@
                     <div class="container mil-p-120-30">
                         <div class="row justify-content-between align-items-center">
                             <div class="col-lg-6 col-xl-5">
+
                                 <div class="mil-mb-90">
                                     <h2 class="mil-up mil-mb-60">
                                         Enter the <br>
@@ -290,8 +290,37 @@
 
                                     </p>
 
-                                    <p class="mil-up mil-mb-60">    Imagine a world where technology becomes an art form, and every line of code is a brushstroke painting a new vision for the future. I harness modern engineering to sculpt immersive digital landscapes, where creativity and precision converge to push the limits of possibility. In this digital frontier, innovation is a relentless pursuit of excellence that transforms bold ideas into captivating, tangible realities. Step into a space where each project redefines what’s possible at the intersection of code and creativity.
+                                <div class="matrix-container" id="intro-glitch">
+                                    <p class="mil-up mil-mb-60">
+                                        At Zyphyr Cloud Technologies,
+                                        <span class="matrix-wrapper">
+    <span class="matrix-text" data-text="every pixel">every pixel</span>
+
+  </span>
+                                        is engineered with purpose—
+                                        <span class="matrix-wrapper">
+    <span class="matrix-text" data-text="every line of code an invitation to explore">every line of code an invitation to explore.</span>
+  </span>
+                                        I merge
+                                        <span class="matrix-wrapper">
+    <span class="matrix-text" data-text="cutting‑edge algorithms">cutting‑edge algorithms</span>
+  </span>
+                                        with
+                                        <span class="matrix-wrapper">
+    <span class="matrix-text" data-text="bold, human‑centered design">bold, human‑centered design</span>
+  </span>
+                                        to craft digital experiences that surprise and inspire. From real‑time visuals
+                                        that react like living art to seamless systems that anticipate your next move, I
+                                        don’t just build software—I sculpt new realms of possibility. Step inside and
+                                        discover hows
+                                        <span class="matrix-wrapper">
+    <span class="matrix-text" data-text="one vision can shape the future of interaction">one vision can shape the future of interaction</span>
+  </span>.
                                     </p>
+
+                                    <!-- our rain layer -->
+                                    <div class="rain"></div>
+                                </div>
 
                                     <div class="mil-about-quote">
                                         <div class="mil-avatar mil-up">
@@ -650,24 +679,48 @@
     </div>
     <!-- wrapper end -->
 
-    <!-- jQuery js -->
-    <script src="js/plugins/jquery.min.js"></script>
-    <!-- swup js -->
-    <script src="js/plugins/swup.min.js"></script>
-    <!-- swiper js -->
-    <script src="js/plugins/swiper.min.js"></script>
-    <!-- fancybox js -->
-    <script src="js/plugins/fancybox.min.js"></script>
-    <!-- gsap js -->
-    <script src="js/plugins/gsap.min.js"></script>
-    <!-- scroll smoother -->
-    <script src="js/plugins/smooth-scroll.js"></script>
-    <!-- scroll trigger js -->
-    <script src="js/plugins/ScrollTrigger.min.js"></script>
-    <!-- scroll to js -->
-    <script src="js/plugins/ScrollTo.min.js"></script>
-    <!-- ashley js -->
-    <script src="js/main.js"></script>
+<!-- jQuery js -->
+<script src="js/plugins/jquery.min.js"></script>
+<!-- swup js -->
+<script src="js/plugins/swup.min.js"></script>
+<!-- swiper js -->
+<script src="js/plugins/swiper.min.js"></script>
+<!-- fancybox js -->
+<script src="js/plugins/fancybox.min.js"></script>
+<!-- gsap js -->
+<script src="js/plugins/gsap.min.js"></script>
+<!-- scroll smoother -->
+<script src="js/plugins/smooth-scroll.js"></script>
+<!-- scroll trigger js -->
+<script src="js/plugins/ScrollTrigger.min.js"></script>
+<!-- scroll to js -->
+<script src="js/plugins/ScrollTo.min.js"></script>
+<!-- ashley js -->
+<script src="js/main.js"></script>
+
+<script>
+    (function () {
+        const para = document.querySelector('#intro-glitch p');
+        const words = para.textContent.split(/\s+/);
+        // Choose 3 distinct random indices
+        const pick = new Set();
+        while (pick.size < 3 && pick.size < words.length) {
+            pick.add(Math.floor(Math.random() * words.length));
+        }
+
+        // Rebuild the innerHTML, wrapping picked words
+        para.innerHTML = words.map((w, i) => {
+            // preserve any HTML tags (like <code>…</code>) by checking for '<'
+            if (pick.has(i) && !w.includes('<')) {
+                // strip out punctuation for data-text, but keep w visible
+                const clean = w.replace(/[.,;!?]/g, '');
+                return `<span class="matrix-text" data-text="${clean}">${w}</span>`;
+            }
+            return w;
+        }).join(' ');
+    })();
+</script>
+
 
 </body>
 
