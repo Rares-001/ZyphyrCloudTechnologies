@@ -18,7 +18,35 @@
     <!-- ashley scss -->
     <link rel="stylesheet" href="css/style.css">
     <!-- page name -->
-    <title>Ashley</title>
+    <title>Zyphyr Cloud Technologies</title>
+
+    <!-- Adjust image spacing -->
+    <style>
+        .mil-image-frame img {
+            margin-top: 20px !important;
+            margin-bottom: 20px !important;
+        }
+        .mil-gallery .mil-item {
+            padding-top: 10px !important;
+            padding-bottom: 10px !important;
+        }
+        .mil-siamnet-diagram {
+            padding: 20px 0 !important;
+        }
+    </style>
+
+    <!-- Adjust column layout -->
+    <style>
+        @media (min-width: 992px) {
+            .mil-siamnet-details {
+                padding-left: 30px !important;
+            }
+            .mil-siamnet-diagram {
+                padding-right: 30px !important;
+                border-right: 1px solid #eee;
+            }
+        }
+    </style>
 
 </head>
 
@@ -197,7 +225,7 @@
     <!-- frame -->
     <div class="mil-frame">
         <div class="mil-frame-top">
-            <a href="home-1.html" class="mil-logo">A.</a>
+            <a href="home-1.html" class="mil-logo">Z.</a>
             <div class="mil-menu-btn">
                 <span></span>
             </div>
@@ -218,7 +246,7 @@
         <div id="swupMain" class="mil-main-transition">
 
             <!-- banner -->
-            <div class="mil-inner-banner">
+            <div class="mil-inner-banner" style="padding: 60px 0">
                 <div class="mil-banner-content mil-up">
                     <div class="mil-animation-frame">
                         <div class="mil-animation mil-position-4 mil-dark mil-scale" data-value-1="6" data-value-2="1.4"></div>
@@ -229,7 +257,8 @@
                             <li><a href="portfolio-1.html">Portfolio</a></li>
                             <li><a href="project-1.html"> Autonomous data driven service robot.</a></li>
                         </ul>
-                        <h1 class="mil-mb-60">Autonomous data driven<span class="mil-thin"> service robot.</span></h1>
+                        <h1 class="mil-mb-30">Autonomous data driven<span class="mil-thin"> service robot.</span></h1>
+                        <h3 class="mil-thin mil-mb-60">Advanced Robotics Platform for Dynamic Environments</h3>
                         <a href="#project" class="mil-link mil-dark mil-arrow-place mil-down-arrow">
                             <span>Read more</span>
                         </a>
@@ -239,10 +268,10 @@
             <!-- banner end -->
 
             <!-- project -->
-            <section class="mil-p-120-0">
+            <section class="mil-p-60-30">
                 <div class="container mil-p-0-120" id="project">
                     <div class="mil-image-frame mil-horizontal mil-up">
-                        <img src="img/works/1/dyalo-wallpaper-intro.gif" alt="image">
+                        <img src="img/works/1/dyalo-wallpaper-intro.gif" alt="Mina robot in operational environment" style="max-width: 90%; margin: 0 auto; display: block;">
                         <a data-fancybox="gallery" data-no-swup href="img/works/1/dyalo-wallpaper-intro.gif" class="mil-zoom-btn">
                             <img src="img/works/1/dyalo-wallpaper-intro.gif" alt="zoom">
                         </a>
@@ -252,13 +281,13 @@
                         <div>Date: May 2023&nbsp;;<span class="mil-dark"></span></div>
                         <div>Author: Rares Matei Husarescu&nbsp;;<span class="mil-dark"></span></div>
                     </div>
-                    <div class="mil-p-120-0">
+                    <div class="mil-p-60-30">
 
                         <div class="row">
                             <div class="col-lg-6">
 
                                 <div class="mil-image-frame mil-square mil-up mil-mb-30">
-                                    <img src="img/works/1/show-1.png" alt="image">
+                                    <img src="img/works/1/show-1.png" alt="Sensor integration diagram" style="max-width: 85%; margin: 0 auto;">
                                     <a data-fancybox="gallery" data-no-swup href="img/works/1/show-1.png" class="mil-zoom-btn">
                                         <img src="img/works/1/show-1.png" alt="zoom">
                                     </a>
@@ -268,7 +297,7 @@
                             <div class="col-lg-6">
 
                                 <div class="mil-image-frame mil-square mil-up mil-mb-30">
-                                    <img src="img/works/1/show-2.png" alt="image">
+                                    <img src="img/works/1/show-2.png" alt="Navigation algorithm visualization" style="max-width: 85%; margin: 0 auto;">
                                     <a data-fancybox="gallery" data-no-swup href="img/works/1/show-2.png" class="mil-zoom-btn">
                                         <img src="img/works/1/show-2.png" alt="zoom">
                                     </a>
@@ -312,17 +341,207 @@
 
                     </div>
 
-                    <div class="mil-works-nav mil-up">
-                        <a href="#." class="mil-link mil-dark mil-arrow-place mil-icon-left mil-disabled">
-                            <span>Prev project</span>
-                        </a>
-                        <a href="portfolio-1.html" class="mil-link mil-dark">
-                            <span>All projects</span>
-                        </a>
-                        <a href="project-2.html" class="mil-link mil-dark mil-arrow-place">
-                            <span>Next project</span>
-                        </a>
+                    <h3 class="mil-up mil-mb-30">Technical Specifications</h3>
+                    <div class="mil-tech-specs mil-up mil-mb-60">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Hardware Platform</h4>
+                                <ul>
+                                    <li>NVIDIA Jetson AGX Orin compute module</li>
+                                    <li>360° LIDAR with 40m range</li>
+                                    <li>Stereo cameras with depth perception</li>
+                                    <li>Inertial Measurement Unit (IMU)</li>
+                                    <li>Omnidirectional wheelbase</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Software Stack</h4>
+                                <ul>
+                                    <li>ROS 2 Humble (Robot Operating System)</li>
+                                    <li>Python 3.10 with C++ bindings</li>
+                                    <li>TensorRT-accelerated inference</li>
+                                    <li>Custom SLAM implementation</li>
+                                    <li>Multi-modal sensor fusion</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
+
+                    <h3 class="mil-up mil-mb-30">System Architecture</h3>
+                    <div class="mil-system-arch mil-up mil-mb-60">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4>Modular Design for Scalable Robotics</h4>
+                                <p class="mil-up mil-mb-30">Mina's architecture follows a layered approach with clear separation between perception, decision-making, and actuation subsystems. The ROS-based middleware enables seamless communication between distributed components while maintaining real-time performance.</p>
+
+                                <div class="mil-arch-description mil-up">
+                                    <h4 class="mil-mb-30">Modular Design for Scalable Robotics</h4>
+                                    <p class="mil-mb-30">Mina's architecture follows a layered approach with clear separation between perception, decision-making, and actuation subsystems. The ROS-based middleware enables seamless communication between distributed components.</p>
+
+                                    <h5 class="mil-mb-15">Key Components:</h5>
+                                    <ul class="mil-mb-30">
+                                        <li><strong>Perception Layer:</strong> LIDAR, stereo cameras, IMU</li>
+                                        <li><strong>Decision Layer:</strong> NVIDIA Jetson AGX Orin</li>
+                                        <li><strong>Actuation Layer:</strong> Omnidirectional wheelbase</li>
+                                        <li><strong>Middleware:</strong> ROS 2 Humble</li>
+                                    </ul>
+
+                                    <h5 class="mil-mb-15">Communication Flow:</h5>
+                                    <ol>
+                                        <li>Sensor data acquisition</li>
+                                        <li>Data processing with Python/C++</li>
+                                        <li>Machine learning inference</li>
+                                        <li>Motion planning and control</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="mil-up mil-mb-30">Machine Learning Capabilities</h3>
+                    <div class="mil-ml-capabilities mil-up mil-mb-60">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Computer Vision Pipeline</h4>
+                                <p class="mil-up mil-mb-15">Our custom-trained models achieve state-of-the-art performance in challenging environments:</p>
+                                <ul class="mil-up mil-mb-30">
+                                    <li>YOLOv7 for real-time object detection (45 FPS on Jetson)</li>
+                                    <li>DeepSORT for multi-object tracking</li>
+                                    <li>Custom Siamese network for appearance matching</li>
+                                    <li>Stereo vision depth estimation</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Autonomous Navigation</h4>
+                                <p class="mil-up mil-mb-15">Advanced path planning and obstacle avoidance:</p>
+                                <ul class="mil-up mil-mb-30">
+                                    <li>Hybrid A*/RRT* for optimal path planning</li>
+                                    <li>Dynamic window approach for collision avoidance</li>
+                                    <li>Multi-sensor fusion for state estimation</li>
+                                    <li>Adaptive speed control based on terrain analysis</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="mil-up mil-mb-30">Siamese Network</h3>
+                    <section class="mil-siamnet mil-p-60-45 mil-light-bg">
+                        <div class="container">
+                            <h3 class="mil-text-center mil-up mil-mb-60">Siamese Network <span class="mil-thin">Implementation</span></h3>
+
+                            <div class="row align-items-center">
+                                <div class="col-lg-6 mil-mb-60">
+                                    <div class="mil-siamnet-diagram mil-up">
+                                        <img src="img/works/1/siamese-network.png"
+                                             alt="Siamese Network Architecture"
+                                             class="mil-shadow"
+                                             style="max-width: 90%; height: auto; display: block; margin: 0 auto;">
+                                        <p class="mil-caption mil-text-center mil-mt-15">
+                                            Fig 5: Twin CNN architecture with triplet loss
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-6 mil-mb-60">
+                                    <div class="mil-siamnet-details mil-up">
+                                        <h4 class="mil-mb-30">On-Device Person-Specific Recognition</h4>
+                                        <p class="mil-mb-30">Our custom Siamese network enables Mina to recognize specific individuals after minimal exposure. When a new person is detected, the system automatically captures 2-3 reference images and trains a new recognition branch in real-time.</p>
+
+                                        <h5 class="mil-mb-15">Key Technical Features:</h5>
+                                        <ul class="mil-mb-30">
+                                            <li><strong>Automatic Capture:</strong> Triggered when new faces exceed confidence threshold</li>
+                                            <li><strong>Triplet Loss:</strong> ℒ(A,P,N) = max(‖f(A)-f(P)‖² - ‖f(A)-f(N)‖² + α, 0)</li>
+                                            <li><strong>Feature Extraction:</strong> MobileNetV2 backbone with depthwise separable conv</li>
+                                            <li><strong>On-Device Training:</strong> ~500ms per epoch on Jetson AGX Orin</li>
+                                            <li><strong>Continuous Learning:</strong> Adds new embeddings without retraining entire model</li>
+                                        </ul>
+
+                                        <h5 class="mil-mb-15">Workflow:</h5>
+                                        <ol>
+                                            <li><strong>Detection:</strong> YOLOv7 identifies new high-confidence face</li>
+                                            <li><strong>Capture:</strong> 3 reference images taken at 0.5s intervals</li>
+                                            <li><strong>Embedding:</strong> Face encoder generates 128-d feature vectors</li>
+                                            <li><strong>Training:</strong> 10-epoch triplet loss optimization (α=0.2)</li>
+                                            <li><strong>Verification:</strong> Live matching against new embedding space</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mil-tech-specs mil-up">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5>Performance Metrics</h5>
+                                        <ul>
+                                            <li>95.4% accuracy after 3 reference images</li>
+                                            <li>98.2% accuracy with 5+ reference images</li>
+                                            <li>Inference: 12ms per comparison</li>
+                                            <li>Training: 520ms per new identity</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5>Technical Implementation</h5>
+                                        <ul>
+                                            <li>TensorRT-optimized inference</li>
+                                            <li>Hardware-accelerated FP16 training</li>
+                                            <li>Online hard negative mining</li>
+                                            <li>Adaptive margin scheduling</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <h3 class="mil-up mil-mb-30">Deployment Case Studies</h3>
+                    <div class="mil-case-studies mil-up mil-mb-60">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mil-case-card mil-up">
+                                    <h5>Warehouse Logistics</h5>
+                                    <p>Automated inventory management with 99.8% SKU recognition accuracy</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mil-case-card mil-up">
+                                    <h5>Healthcare Assistance</h5>
+                                    <p>Medication delivery in hospital environments with social navigation</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mil-case-card mil-up">
+                                    <h5>Agricultural Monitoring</h5>
+                                    <p>Crop health analysis in greenhouse environments with hyperspectral imaging</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="mil-up mil-mb-30">Performance Metrics</h3>
+                    <div class="mil-metrics mil-up mil-mb-60">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mil-metric-item">
+                                    <div class="mil-metric-value">97.3%</div>
+                                    <div class="mil-metric-label">Object recognition accuracy</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mil-metric-item">
+                                    <div class="mil-metric-value">8 hrs</div>
+                                    <div class="mil-metric-label">Continuous operation</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mil-metric-item">
+                                    <div class="mil-metric-value">0.05m</div>
+                                    <div class="mil-metric-label">Localization precision</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </section>
             <!-- project end -->
@@ -425,7 +644,7 @@
                             <div class="col-md-4 col-lg-6 mil-mb-60">
 
                                 <div class="mil-vert-between">
-                                    <p class="mil-light-soft mil-up">© 2025 Zyphyr Cloud Technologies. All Rights Reserved.</p>
+                                    <p class="mil-light-soft mil-up"> 2025 Zyphyr Cloud Technologies. All Rights Reserved.</p>
                                 </div>
 
                             </div>
@@ -438,13 +657,6 @@
             <!-- hidden elements -->
             <div class="mil-hidden-elements">
                 <div class="mil-dodecahedron">
-                    <div class="mil-pentagon">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
                     <div class="mil-pentagon">
                         <div></div>
                         <div></div>

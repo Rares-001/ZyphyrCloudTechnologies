@@ -20,6 +20,35 @@
     <!-- page name -->
     <title>Ashley</title>
 
+    <!-- Prism.js for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-java.min.js"></script>
+
+    <style>
+        /* New color scheme */
+        .mil-text-blue { color: #4361ee; }
+        .mil-bg-blue { background-color: #4361ee; color: white; }
+        .mil-card-blue { border-left: 3px solid #4361ee; }
+        .mil-text-purple { color: #7209b7; }
+        .mil-bg-purple { background-color: #7209b7; color: white; }
+
+        /* Code blocks */
+        .mil-code-block { 
+          background: #1e1e1e; 
+          color: #f8f8f2; 
+          padding: 20px; 
+          border-radius: 8px; 
+          border-left: 3px solid #4361ee;
+        }
+        
+        /* Spacing */
+        .mil-card { margin-bottom: 40px; }
+        
+        /* Additional styling for new sections */
+        .mil-card-purple { border-left: 3px solid #7209b7; }
+    </style>
+
 </head>
 
 <body>
@@ -173,7 +202,7 @@
 
                                             <h6 class="mil-muted mil-mb-30">Germany</h6>
 
-                                            <p class="mil-light-soft">Leehove 40, 2678 MC De Lier, Netherlands <span class="mil-no-wrap">+31 174 705 811</span></p>
+                                            <p class="mil-light-soft mil-up">Leehove 40, 2678 MC De Lier, Netherlands <span class="mil-no-wrap">+31 174 705 811</span></p>
 
                                         </div>
                                     </div>
@@ -236,102 +265,249 @@
                 <!-- banner end -->
 
                 <!-- project -->
-                <section class="mil-p-120-0">
-                    <div class="mil-image-frame mil-fw mil-up">
-                        <img src="img/works/5/1.jpg" alt="image">
-                        <a data-fancybox="gallery" data-no-swup href="img/works/5/1.jpg" class="mil-zoom-btn">
-                            <img src="img/icons/zoom.svg" alt="zoom">
-                        </a>
-                    </div>
-                    <div class="container mil-p-0-120" id="project">
+                <section id="project">
+                    <div class="container mil-p-120-120">
                         <div class="mil-info mil-up">
-                            <div>Client: &nbsp;<span class="mil-dark">Envato Market</span></div>
-                            <div>Date: &nbsp;<span class="mil-dark">April 2023</span></div>
+                            <div>Client: &nbsp;<span class="mil-dark">Music Player</span></div>
+                            <div>Date: &nbsp;<span class="mil-dark">July 2023</span></div>
                             <div>Author: &nbsp;<span class="mil-dark">Paul Trueman</span></div>
                         </div>
-                        <div class="mil-p-120-0">
-                            <div class="swiper-container mil-2-slider mil-up">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
+                        <div class="row justify-content-center mil-center mil-p-120-120">
+                            <div class="col-lg-8">
+                                <h3 class="mil-up mil-mb-60">Java Design Patterns in Action</h3>
+                                <p class="mil-text-lg mil-up">Music Player Application - A Case Study in Modern Pattern Implementation</p>
+                            </div>
+                        </div>
 
-                                        <div class="mil-image-frame mil-square mil-drag">
-                                            <img src="img/works/5/2.jpg" alt="image">
-                                            <a data-fancybox="gallery" data-no-swup href="img/works/5/2.jpg" class="mil-zoom-btn">
-                                                <img src="img/icons/zoom.svg" alt="zoom">
-                                            </a>
-                                        </div>
+                        <!-- Key Patterns -->
+                        <div class="row justify-content-center mil-center mil-p-120-0">
+                            <div class="col-lg-8">
+                                <h3 class="mil-up mil-mb-60"><i class="fas fa-shapes mil-text-blue"></i> Core Design Patterns</h3>
+                                <p class="mil-up mil-mb-30">This application demonstrates how classic design patterns solve modern development challenges:</p>
 
+                                <!-- Strategy Pattern -->
+                                <div class="mil-card mil-card-blue mil-up mil-mb-60">
+                                    <h4 class="mil-mb-30">Strategy Pattern</h4>
+                                    <p><span class="mil-bold">Where it's used:</span> Playback behavior (Normal, Shuffle, Repeat)</p>
+                                    <p><span class="mil-bold">Why it's useful:</span> Enables runtime behavior changes without complex conditionals. Follows Open/Closed Principle.</p>
+                                    <p><span class="mil-bold">Modern implementation:</span> Injected via dependency injection, tested in isolation.</p>
+                                    
+                                    <h5 class="mil-mt-40 mil-mb-20">Pattern in Action:</h5>
+                                    <pre class="mil-code-block"><code class="language-java">public interface PlaybackStrategy {
+    void play(List&lt;Song&gt; playlist);
+}
+
+public class NormalPlayback implements PlaybackStrategy {
+    public void play(List&lt;Song&gt; playlist) {
+        // Standard sequential playback
+    }
+}
+
+public class ShufflePlayback implements PlaybackStrategy {
+    public void play(List&lt;Song&gt; playlist) {
+        // Shuffled playback logic
+    }
+}
+
+// Client usage
+public class MusicController {
+    private PlaybackStrategy strategy;
+    
+    public void setStrategy(PlaybackStrategy strategy) {
+        this.strategy = strategy;
+    }
+    
+    public void playPlaylist() {
+        strategy.play(currentPlaylist);
+    }
+}</code></pre>
+                                </div>
+
+                                <!-- Observer Pattern -->
+                                <div class="mil-card mil-card-blue mil-up mil-mb-60">
+                                    <h4 class="mil-mb-30">Observer Pattern</h4>
+                                    <p><span class="mil-bold">Where it's used:</span> UI updates across Library, Playlist, and Player views</p>
+                                    <p><span class="mil-bold">Why it's useful:</span> Creates reactive UIs that update automatically when data changes.</p>
+                                    <p><span class="mil-bold">Modern equivalent:</span> Kotlin Flow, RxJS, or Redux-style state management.</p>
+                                    
+                                    <h5 class="mil-mt-40 mil-mb-20">Pattern in Action:</h5>
+                                    <pre class="mil-code-block"><code class="language-java">public interface PlaylistObserver {
+    void update(Playlist playlist);
+}
+
+public class PlaylistView implements PlaylistObserver {
+    public void update(Playlist playlist) {
+        // Update UI with new playlist state
+    }
+}
+
+public class Playlist {
+    private List&lt;PlaylistObserver&gt; observers = new ArrayList&lt;&gt;();
+    
+    public void addObserver(PlaylistObserver o) {
+        observers.add(o);
+    }
+    
+    public void addSong(Song song) {
+        // Add song logic
+        notifyObservers();
+    }
+    
+    private void notifyObservers() {
+        for (PlaylistObserver o : observers) {
+            o.update(this);
+        }
+    }
+}</code></pre>
+                                </div>
+
+                                <!-- Factory Method -->
+                                <div class="mil-card mil-card-blue mil-up mil-mb-60">
+                                    <h4 class="mil-mb-30">Factory Method</h4>
+                                    <p><span class="mil-bold">Where it's used:</span> Song creation for different file formats (AIFF, WAV)</p>
+                                    <p><span class="mil-bold">Why it's useful:</span> Encapsulates object creation logic, making it easy to support new formats.</p>
+                                    <p><span class="mil-bold">Modern equivalent:</span> Paired with dependency injection containers like Dagger/Hilt.</p>
+                                    
+                                    <h5 class="mil-mt-40 mil-mb-20">Pattern in Action:</h5>
+                                    <pre class="mil-code-block"><code class="language-java">public abstract class SongCreator {
+    public abstract Song createSong(File file);
+}
+
+public class WAVSongCreator extends SongCreator {
+    public Song createSong(File file) {
+        return new WAVSong(file);
+    }
+}
+
+public class AIFFSongCreator extends SongCreator {
+    public Song createSong(File file) {
+        return new AIFFSong(file);
+    }
+}
+
+// Client usage
+public class SongImporter {
+    private SongCreator creator;
+    
+    public SongImporter(SongCreator creator) {
+        this.creator = creator;
+    }
+    
+    public Song importSong(File file) {
+        return creator.createSong(file);
+    }
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Creative Introduction -->
+                        <div class="row justify-content-center mil-center mil-p-120-0">
+                            <div class="col-lg-8">
+                                <h2 class="mil-up mil-mb-60">Architectural Harmony: Design Patterns in Modern Java</h2>
+                                <p class="mil-text-lg mil-up mil-mb-60">Just as musical notes combine to create harmony, design patterns combine to create maintainable, extensible software. This project demonstrates how timeless architectural solutions solve modern development challenges in a music player application.</p>
+
+                                <div class="mil-card mil-card-purple mil-up mil-mb-60">
+                                    <h3 class="mil-mb-30">Patterns at a Glance</h3>
+                                    <div class="mil-table-responsive">
+                                        <table class="mil-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Pattern</th>
+                                                    <th>Problem Solved</th>
+                                                    <th>Real-World Analogy</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="mil-bold mil-text-blue">Strategy</span></td>
+                                                    <td>Dynamic behavior selection</td>
+                                                    <td>Choosing different transportation routes</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="mil-bold mil-text-blue">Observer</span></td>
+                                                    <td>State synchronization</td>
+                                                    <td>News subscription service</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="mil-bold mil-text-blue">Factory Method</span></td>
+                                                    <td>Object creation complexity</td>
+                                                    <td>Automobile manufacturing plant</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="mil-bold mil-text-blue">Decorator</span></td>
+                                                    <td>Adding features dynamically</td>
+                                                    <td>Layering clothing for weather</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="mil-bold mil-text-blue">Facade</span></td>
+                                                    <td>Simplifying complex systems</td>
+                                                    <td>Theater control panel</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
-                                    <div class="swiper-slide">
+                                </div>
 
-                                        <div class="mil-image-frame mil-square mil-drag">
-                                            <img src="img/works/5/3.gif" alt="image">
-                                            <a data-fancybox="gallery" data-no-swup href="img/works/5/3.gif" class="mil-zoom-btn">
-                                                <img src="img/icons/zoom.svg" alt="zoom">
-                                            </a>
+                                <p class="mil-up mil-mb-60">These patterns work together like instruments in an orchestra—each playing its part to create a cohesive, adaptable system that can evolve with changing requirements.</p>
+                            </div>
+                        </div>
+
+                        <!-- Engineering Context -->
+                        <div class="row justify-content-center mil-center mil-p-120-0">
+                            <div class="col-lg-8">
+                                <h3 class="mil-up mil-mb-60"><i class="fas fa-cogs mil-text-purple"></i> Engineering Benefits</h3>
+                                <div class="row mil-up mil-mb-30">
+                                    <div class="col-md-4 mil-mb-30">
+                                        <div class="mil-card mil-card-blue">
+                                            <div class="mil-card-title mil-mb-20">Loose Coupling</div>
+                                            <p>Components interact through interfaces, not concrete implementations</p>
                                         </div>
-
                                     </div>
-                                    <div class="swiper-slide">
-
-                                        <div class="mil-image-frame mil-square mil-drag">
-                                            <img src="img/works/5/4.jpg" alt="image">
-                                            <a data-fancybox="gallery" data-no-swup href="img/works/5/4.jpg" class="mil-zoom-btn">
-                                                <img src="img/icons/zoom.svg" alt="zoom">
-                                            </a>
+                                    <div class="col-md-4 mil-mb-30">
+                                        <div class="mil-card mil-card-blue">
+                                            <div class="mil-card-title mil-mb-20">Testability</div>
+                                            <p>Patterns enable isolated unit testing of each component</p>
                                         </div>
-
                                     </div>
-                                    <div class="swiper-slide">
-
-                                        <div class="mil-image-frame mil-square mil-drag">
-                                            <img src="img/works/5/5.gif" alt="image">
-                                            <a data-fancybox="gallery" data-no-swup href="img/works/5/5.gif" class="mil-zoom-btn">
-                                                <img src="img/icons/zoom.svg" alt="zoom">
-                                            </a>
+                                    <div class="col-md-4 mil-mb-30">
+                                        <div class="mil-card mil-card-blue">
+                                            <div class="mil-card-title mil-mb-20">Extensibility</div>
+                                            <p>New features can be added with minimal changes to existing code</p>
                                         </div>
-
-                                    </div>
-                                    <div class="swiper-slide">
-
-                                        <div class="mil-image-frame mil-square mil-drag">
-                                            <img src="img/works/5/6.jpg" alt="image">
-                                            <a data-fancybox="gallery" data-no-swup href="img/works/5/6.jpg" class="mil-zoom-btn">
-                                                <img src="img/icons/zoom.svg" alt="zoom">
-                                            </a>
-                                        </div>
-
                                     </div>
                                 </div>
                             </div>
-                            <div class="row justify-content-between mil-p-120-120">
-                                <div class="col-lg-5">
-                                    <h3 class="mil-up mil-mb-60">Simplicity, elegance, innovation!</h3>
-                                </div>
-                                <div class="col-lg-6">
-                                    <p class="mil-up mil-mb-30">A home surveillance camera that pays great attention to security and user privacy, featuring two modes to provide security while protecting personal privacy.The camera has an open and closed mode, we define the product to have clear two sides, expressing two working states and emotions.</p>
+                        </div>
 
-                                    <p class="mil-up">Presents a simple and quiet state when not in use, delivering a gentle and security.At the same time, the camera can adapt to a variety of environments, providing elegant ways of wall hanging and standing installation.</p>
+                        <!-- Why Patterns Matter -->
+                        <div class="row justify-content-center mil-center mil-p-120-0">
+                            <div class="col-lg-8">
+                                <h3 class="mil-up mil-mb-60"><i class="fas fa-star mil-text-purple"></i> Why Design Patterns Matter in 2025</h3>
+                                <p class="mil-up mil-mb-30">Design patterns bridge timeless software principles with modern development practices:</p>
+                                
+                                <div class="mil-card mil-card-purple mil-up mil-mb-30">
+                                    <h4 class="mil-mb-20">Future-Proof Architecture</h4>
+                                    <p>Patterns create flexible foundations that adapt to new requirements without rewrites</p>
+                                </div>
+                                
+                                <div class="mil-card mil-card-purple mil-up mil-mb-30">
+                                    <h4 class="mil-mb-20">Team Collaboration</h4>
+                                    <p>Patterns provide a shared vocabulary that accelerates onboarding and collaboration</p>
+                                </div>
+                                
+                                <div class="mil-card mil-card-purple mil-up mil-mb-30">
+                                    <h4 class="mil-mb-20">Performance Optimization</h4>
+                                    <p>Decoupled components enable targeted performance improvements</p>
+                                </div>
+                                
+                                <div class="mil-card mil-card-purple mil-up mil-mb-30">
+                                    <h4 class="mil-mb-20">Maintainability</h4>
+                                    <p>Patterns reduce technical debt by enforcing separation of concerns</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="mil-image-frame mil-horizontal mil-up mil-mb-120">
-                            <img src="img/works/5/7.gif" alt="image">
-                            <a data-fancybox="gallery" data-no-swup href="img/works/5/7.gif" class="mil-zoom-btn">
-                                <img src="img/icons/zoom.svg" alt="zoom">
-                            </a>
-                        </div>
-                        <div class="mil-works-nav mil-up">
-                            <a href="project-4.html" class="mil-link mil-dark mil-arrow-place mil-icon-left">
-                                <span>Prev project</span>
-                            </a>
-                            <a href="portfolio-1.html" class="mil-link mil-dark">
-                                <span>All projects</span>
-                            </a>
-                            <a href="project-6.html" class="mil-link mil-dark mil-arrow-place">
-                                <span>Next project</span>
-                            </a>
-                        </div>
+
                     </div>
                 </section>
                 <!-- project end -->
@@ -443,7 +619,7 @@
                                                 <li><a href="#." target="_blank" class="social-icon"> <i class="far fa-circle"></i></a></li>
                                             </ul>
                                         </div>
-                                        <p class="mil-light-soft mil-up">© Copyright 2023 - Mil. All Rights Reserved.</p>
+                                        <p class="mil-light-soft mil-up"> 2023 - Mil. All Rights Reserved.</p>
                                     </div>
 
                                 </div>

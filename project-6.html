@@ -20,6 +20,21 @@
     <!-- page name -->
     <title>Ashley</title>
 
+    <style>
+        .mil-example-block {
+            width: 100%;
+            max-width: 100%;
+            overflow: visible;
+        }
+        .mil-example-block code,
+        .mil-example-block pre {
+            white-space: pre-wrap;
+            word-break: break-word;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -173,7 +188,7 @@
 
                                             <h6 class="mil-muted mil-mb-30">Germany</h6>
 
-                                            <p class="mil-light-soft">Leehove 40, 2678 MC De Lier, Netherlands <span class="mil-no-wrap">+31 174 705 811</span></p>
+                                            <p class="mil-light-soft mil-up">Leehove 40, 2678 MC De Lier, Netherlands <span class="mil-no-wrap">+31 174 705 811</span></p>
 
                                         </div>
                                     </div>
@@ -215,7 +230,7 @@
             <div id="swupMain" class="mil-main-transition">
 
                 <!-- banner -->
-                <div class="mil-inner-banner">
+                <div class="mil-inner-banner" style="background-color: orange;">
                     <div class="mil-banner-content mil-up">
                         <div class="mil-animation-frame">
                             <div class="mil-animation mil-position-4 mil-dark mil-scale" data-value-1="6" data-value-2="1.4"></div>
@@ -226,7 +241,7 @@
                                 <li><a href="portfolio-1.html">Portfolio</a></li>
                                 <li><a href="project-1.html">Project</a></li>
                             </ul>
-                            <h1 class="mil-mb-60">Air Pro <span class="mil-thin">by Molekule</span></h1>
+                            <h1 class="mil-mb-60">BigShopper <span class="mil-thin">Project</span></h1>
                             <a href="#project" class="mil-link mil-dark mil-arrow-place mil-down-arrow">
                                 <span>Read more</span>
                             </a>
@@ -237,123 +252,466 @@
 
                 <!-- project -->
                 <section class="mil-p-120-120">
-                    <div class="mil-image-frame mil-fw mil-up">
-                        <img src="img/works/6/1.jpg" alt="image">
-                        <a data-fancybox="gallery" data-no-swup href="img/works/6/1.jpg"  class="mil-zoom-btn">
-                            <img src="img/icons/zoom.svg" alt="zoom">
-                        </a>
-                    </div>
                     <div class="container" id="project">
-                        <div class="mil-info mil-up">
-                            <div>Client: &nbsp;<span class="mil-dark">Envato Market</span></div>
-                            <div>Date: &nbsp;<span class="mil-dark">April 2023</span></div>
-                            <div>Author: &nbsp;<span class="mil-dark">Paul Trueman</span></div>
-                        </div>
-                        <div class="mil-p-120-120">
-                            <div class="swiper-container mil-2-slider mil-up">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="project-details">
+  <style>
+    .section-block {
+      margin-bottom: 60px;
+    }
+    .section-title {
+      color: #FF8C00;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #FFF3E0;
+    }
+    .tech-stack-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+    .tech-stack-table th, .tech-stack-table td {
+      padding: 20px;
+      text-align: left;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .tech-stack-table th {
+      background-color: #FFF9F0;
+      font-weight: 600;
+    }
+    .tech-stack-table tr:hover {
+      background-color: #FFF9F0;
+    }
+    .mil-process-step {
+      position: relative;
+      padding-left: 40px;
+      margin-bottom: 40px;
+    }
+    .mil-process-step:before {
+      content: attr(data-step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 30px;
+      height: 30px;
+      background: #FF8C00;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    .mil-process-content {
+      background: #FFF9F0;
+      padding: 30px;
+      border-radius: 12px;
+      margin-top: 15px;
+    }
+    .mil-process-content h5 {
+      margin-top: 0;
+      color: #FF8C00;
+    }
+    .mil-process-diagram {
+      display: flex;
+      justify-content: space-between;
+      margin: 40px 0;
+      padding: 30px 0;
+      border-top: 1px dashed #FFD8A6;
+      border-bottom: 1px dashed #FFD8A6;
+    }
+    .mil-process-arrow {
+      display: flex;
+      align-items: center;
+      color: #FF8C00;
+      font-size: 24px;
+    }
+    .mil-example-block {
+      background: #FFF9F0;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    .mil-example-title {
+      font-weight: 600;
+      color: #FF8C00;
+      margin-bottom: 10px;
+    }
+  </style>
+  
+  <!-- Introduction Section -->
+  <div class="section-block">
+    <h2 class="mil-up mil-mb-30">BigShopper: Bol.com Price-Scraper</h2>
+    <p class="mil-up mil-mb-60">
+      This micro-service delivers fresh product and pricing data from Bol.com directly into BigShopper's analytics ecosystem. 
+      Focused exclusively on the Dutch and Belgian markets, our solution provides a ≈30% improvement in data coverage compared 
+      to traditional Google Shopping feeds, with enhanced accuracy and faster update cycles.
+    </p>
+    <div class="mil-up mil-mb-60">
+      <h4>Key Delivery Milestones</h4>
+      <ul class="mil-list">
+        <li>Initial prototype delivered: December 15, 2023</li>
+        <li>Production-ready scraper: January 10, 2024</li>
+        <li>Full integration with analytics stack: January 19, 2024</li>
+        <li>Ongoing maintenance and enhancement: Quarterly updates</li>
+      </ul>
+    </div>
+  </div>
 
-                                        <div class="mil-image-frame mil-vertical mil-drag">
-                                            <img src="img/works/6/2.gif" alt="image">
-                                            <a data-fancybox="gallery" data-no-swup href="img/works/6/2.gif"  class="mil-zoom-btn">
-                                                <img src="img/icons/zoom.svg" alt="zoom">
-                                            </a>
-                                        </div>
+  <!-- Why It Matters -->
+  <div class="section-block">
+    <h3 class="section-title">Strategic Value Proposition</h3>
+    <div class="mil-up mil-mb-60">
+      <h4>Competitive Pricing Intelligence</h4>
+      <p>
+        Our solution provides real-time visibility into Bol.com pricing strategies, enabling retailers to:
+        <ul class="mil-list">
+          <li>React within minutes to competitor price changes</li>
+          <li>Identify pricing trends across 200+ product categories</li>
+          <li>Optimize their own pricing strategies using ML-driven insights</li>
+        </ul>
+      </p>
+    </div>
+    <div class="mil-up mil-mb-60">
+      <h4>Operational Efficiency</h4>
+      <p>
+        By replacing browser-based automation with our lightweight HTTP+lxml solution, we've achieved:
+        <ul class="mil-list">
+          <li>85% reduction in server resource requirements</li>
+          <li>60% faster scraping cycles (average 2.3s per product)</li>
+          <li>24/7 operation without manual intervention</li>
+        </ul>
+      </p>
+    </div>
+    <div class="mil-up mil-mb-60">
+      <h4>Data Quality Focus</h4>
+      <p>
+        With no UI to maintain, we've invested all engineering effort in data quality:
+        <ul class="mil-list">
+          <li>99.2% data completeness rate across all fields</li>
+          <li>Automated data validation with 50+ integrity checks</li>
+          <li>Historical tracking with versioned price histories</li>
+        </ul>
+      </p>
+    </div>
+  </div>
 
-                                    </div>
-                                    <div class="swiper-slide">
+  <!-- How It Works -->
+  <div class="section-block">
+    <h3 class="section-title">System Architecture & Workflow</h3>
+    
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="mil-process-step" data-step="1">
+          <h4>Input Handling</h4>
+          <div class="mil-process-content">
+            <p>The system accepts two types of input:</p>
+            <ul class="mil-list">
+              <li><strong>GTINs</strong> (Global Trade Item Numbers) - Standardized product identifiers</li>
+              <li><strong>Product Titles</strong> - Natural language product descriptions</li>
+            </ul>
+            <div class="mil-example-block">
+              <div class="mil-example-title">Example Input:</div>
+              <code class="code-block">{{"gtin": "8712345678901", "title": "Sony WH-1000XM5 Wireless Headphones"}}</code>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mil-process-step" data-step="3">
+          <h4>Scraping & Parsing</h4>
+          <div class="mil-process-content">
+            <p>Specialized parsers extract:</p>
+            <ul class="mil-list">
+              <li>Product specifications (attributes, dimensions)</li>
+              <li>Seller information (rating, delivery terms)</li>
+              <li>Pricing data (current, historical, discounts)</li>
+            </ul>
+            <div class="mil-example-block">
+              <div class="mil-example-title">Data Extraction Example:</div>
+              <pre class="code-block">product_info = {
+  "name": "Sony WH-1000XM5",
+  "brand": "Sony",
+  "price": 349.00,
+  "sellers": [
+    {"name": "MediaMarkt", "rating": 4.8},
+    {"name": "Bol.com", "rating": 4.9}
+  ],
+  "specs": {"battery": "30h", "noiseCancelling": "Yes"}
+}</pre>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mil-process-step" data-step="5">
+          <h4>Data Exposure</h4>
+          <div class="mil-process-content">
+            <p>Integrated with BigShopper's pipelines through:</p>
+            <ul class="mil-list">
+              <li>REST API endpoints for real-time access</li>
+              <li>Daily CSV exports for batch processing</li>
+              <li>Live webhook notifications for price changes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6">
+        <div class="mil-process-step" data-step="2">
+          <h4>Ideal-Item Search</h4>
+          <div class="mil-process-content">
+            <p>Our matching algorithm:</p>
+            <ul class="mil-list">
+              <li>Validates GTIN format (13-digit checksum)</li>
+              <li>Performs fuzzy matching using Levenshtein distance</li>
+              <li>Retries up to 5 times with query refinement</li>
+            </ul>
+            <div class="mil-example-block">
+              <div class="mil-example-title">Matching Process:</div>
+              <pre class="code-block">def find_ideal_item(query):
+    attempts = 0
+    while attempts < 5:
+        results = bol_api_search(query)
+        if results['status'] == 200:
+            best_match = max(results['items'], 
+                            key=lambda x: similarity_score(query, x['title']))
+            return best_match
+        query = refine_query(query)
+        attempts += 1
+    raise ItemNotFoundError(f"No match found for {query}")</pre>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mil-process-step" data-step="4">
+          <h4>Data Persistence</h4>
+          <div class="mil-process-content">
+            <p>Structured storage in PostgreSQL:</p>
+            <ul class="mil-list">
+              <li>Products table (core product details)</li>
+              <li>Prices table (historical pricing)</li>
+              <li>Specifications table (technical attributes)</li>
+              <li>Relationships table (product-seller mappings)</li>
+            </ul>
+            <div class="mil-example-block">
+              <div class="mil-example-title">Database Schema:</div>
+              <pre class="code-block">CREATE TABLE products (
+    id SERIAL PRIMARY KEY,
+    gtin VARCHAR(13) UNIQUE,
+    title VARCHAR(255),
+    brand VARCHAR(100),
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    updated_at TIMESTAMPTZ DEFAULT NOW()
+);
 
-                                        <div class="mil-image-frame mil-vertical mil-drag">
-                                            <img src="img/works/6/3.jpg" alt="image">
-                                            <a data-fancybox="gallery" data-no-swup href="img/works/6/3.jpg"  class="mil-zoom-btn">
-                                                <img src="img/icons/zoom.svg" alt="zoom">
-                                            </a>
-                                        </div>
+CREATE TABLE prices (
+    product_id INTEGER REFERENCES products(id),
+    price NUMERIC(10,2),
+    seller VARCHAR(100),
+    timestamp TIMESTAMPTZ DEFAULT NOW()
+);</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mil-process-diagram">
+      <div>Input</div>
+      <div class="mil-process-arrow">→</div>
+      <div>Search</div>
+      <div class="mil-process-arrow">→</div>
+      <div>Scraping</div>
+      <div class="mil-process-arrow">→</div>
+      <div>Storage</div>
+      <div class="mil-process-arrow">→</div>
+      <div>Exposure</div>
+    </div>
+  </div>
 
-                                    </div>
-                                    <div class="swiper-slide">
+  <!-- Tech Stack -->
+  <div class="section-block">
+    <h3 class="section-title">Technology Implementation Details</h3>
+    <table class="tech-stack-table">
+      <thead>
+        <tr>
+          <th>Layer</th>
+          <th>Technology</th>
+          <th>Implementation Details</th>
+          <th>Key Benefits</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Core Language</td>
+          <td>Python 3.11</td>
+          <td>
+            <ul class="mil-list">
+              <li>Asyncio for concurrent scraping</li>
+              <li>Pydantic for data validation</li>
+              <li>Loguru for structured logging</li>
+            </ul>
+          </td>
+          <td>
+            <ul class="mil-list">
+              <li>Rapid development cycle</li>
+              <li>Rich ecosystem of libraries</li>
+              <li>Excellent async support</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Web Framework</td>
+          <td>Django 4.2</td>
+          <td>
+            <ul class="mil-list">
+              <li>Django ORM for database operations</li>
+              <li>Django REST Framework for APIs</li>
+              <li>Django Admin for content management</li>
+            </ul>
+          </td>
+          <td>
+            <ul class="mil-list">
+              <li>Batteries-included approach</li>
+              <li>Built-in security features</li>
+              <li>Scalable architecture</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>HTML Parsing</td>
+          <td>lxml + XPath</td>
+          <td>
+            <ul class="mil-list">
+              <li>XPath selectors for data extraction</li>
+              <li>HTML cleanup with lxml.html.clean</li>
+              <li>Custom parser middleware</li>
+            </ul>
+          </td>
+          <td>
+            <ul class="mil-list">
+              <li>10x faster than BeautifulSoup</li>
+              <li>Low memory footprint</li>
+              <li>Robust error handling</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Database</td>
+          <td>PostgreSQL 15</td>
+          <td>
+            <ul class="mil-list">
+              <li>JSONB for unstructured specs</li>
+              <li>TimescaleDB for price history</li>
+              <li>Full-text search capabilities</li>
+            </ul>
+          </td>
+          <td>
+            <ul class="mil-list">
+              <li>ACID compliance</li>
+              <li>Advanced indexing options</li>
+              <li>Excellent JSON support</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Infrastructure</td>
+          <td>Docker + Kubernetes</td>
+          <td>
+            <ul class="mil-list">
+              <li>Containerized microservices</li>
+              <li>Horizontal pod autoscaling</li>
+              <li>GitLab CI/CD pipelines</li>
+            </ul>
+          </td>
+          <td>
+            <ul class="mil-list">
+              <li>Consistent environments</li>
+              <li>High availability</li>
+              <li>Zero-downtime deployments</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <div class="mil-up mil-mb-60">
+      <h4>Performance Metrics</h4>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="mil-metric-box">
+            <div class="mil-metric-value">2.3s</div>
+            <div class="mil-metric-label">Avg. scrape time</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="mil-metric-box">
+            <div class="mil-metric-value">99.95%</div>
+            <div class="mil-metric-label">Uptime</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="mil-metric-box">
+            <div class="mil-metric-value">15K/min</div>
+            <div class="mil-metric-label">Peak throughput</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="mil-metric-box">
+            <div class="mil-metric-value">&lt;0.1%</div>
+            <div class="mil-metric-label">Error rate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-                                        <div class="mil-image-frame mil-vertical mil-drag">
-                                            <img src="img/works/6/4.gif" alt="image">
-                                            <a data-fancybox="gallery" data-no-swup href="img/works/6/4.gif"  class="mil-zoom-btn">
-                                                <img src="img/icons/zoom.svg" alt="zoom">
-                                            </a>
-                                        </div>
-
-                                    </div>
-                                    <div class="swiper-slide">
-
-                                        <div class="mil-image-frame mil-vertical mil-drag">
-                                            <img src="img/works/6/5.jpg" alt="image">
-                                            <a data-fancybox="gallery" data-no-swup href="img/works/6/5.jpg"  class="mil-zoom-btn">
-                                                <img src="img/icons/zoom.svg" alt="zoom">
-                                            </a>
-                                        </div>
-
-                                    </div>
-
-                                </div>
+  <!-- Scope -->
+  <div class="section-block">
+    <h3 class="section-title">Project Scope & Boundaries</h3>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="mil-up mil-mb-60">
+          <h4>In Scope</h4>
+          <ul class="mil-list">
+            <li>Bol.com NL/BE product catalog coverage</li>
+            <li>Daily batch scraping of 500K+ products</li>
+            <li>Price history tracking with 1-year retention</li>
+            <li>Seller performance metrics</li>
+            <li>REST API for data access</li>
+            <li>Automated data quality monitoring</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mil-up mil-mb-60">
+          <h4>Out of Scope</h4>
+          <ul class="mil-list">
+            <li>Real-time scraping capabilities</li>
+            <li>Frontend dashboards or user interfaces</li>
+            <li>Multilingual product support</li>
+            <li>Seller review analysis</li>
+            <li>Competitor analysis beyond Bol.com</li>
+            <li>Ad placement or promotion tracking</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mil-up mil-mb-60">
+      <h4>Future Roadmap</h4>
+      <ul class="mil-list">
+        <li>Q2 2024: Amazon.de marketplace integration</li>
+        <li>Q3 2024: Predictive pricing analytics module</li>
+        <li>Q4 2024: AI-powered price recommendation engine</li>
+        <li>Q1 2025: Multi-channel price comparison dashboard</li>
+      </ul>
+    </div>
+  </div>
+</div>
                             </div>
-                            <div class="row justify-content-between mil-p-120-0">
-                                <div class="col-lg-5">
-                                    <h3 class="mil-up mil-mb-60">Simplicity, elegance, innovation!</h3>
-                                </div>
-                                <div class="col-lg-6">
-                                    <p class="mil-up mil-mb-30">A home surveillance camera that pays great attention to security and user privacy, featuring two modes to provide security while protecting personal privacy.The camera has an open and closed mode, we define the product to have clear two sides, expressing two working states and emotions.</p>
-
-                                    <p class="mil-up">Presents a simple and quiet state when not in use, delivering a gentle and security.At the same time, the camera can adapt to a variety of environments, providing elegant ways of wall hanging and standing installation.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-container mil-2-slider mil-up mil-mb-120">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-
-                                    <div class="mil-image-frame mil-horizontal mil-drag">
-                                        <img src="img/works/6/6.jpg" alt="image">
-                                        <a data-fancybox="gallery" data-no-swup href="img/works/6/6.jpg"  class="mil-zoom-btn">
-                                            <img src="img/icons/zoom.svg" alt="zoom">
-                                        </a>
-                                    </div>
-
-                                </div>
-                                <div class="swiper-slide">
-
-                                    <div class="mil-image-frame mil-horizontal mil-drag">
-                                        <img src="img/works/6/7.jpg" alt="image">
-                                        <a data-fancybox="gallery" data-no-swup href="img/works/6/7.jpg"  class="mil-zoom-btn">
-                                            <img src="img/icons/zoom.svg" alt="zoom">
-                                        </a>
-                                    </div>
-
-                                </div>
-                                <div class="swiper-slide">
-
-                                    <div class="mil-image-frame mil-horizontal mil-drag">
-                                        <img src="img/works/6/8.jpg" alt="image">
-                                        <a data-fancybox="gallery" data-no-swup href="img/works/6/8.jpg"  class="mil-zoom-btn">
-                                            <img src="img/icons/zoom.svg" alt="zoom">
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="mil-works-nav mil-up">
-                            <a href="project-5.html" class="mil-link mil-dark mil-arrow-place mil-icon-left">
-                                <span>Prev project</span>
-                            </a>
-                            <a href="portfolio-1.html" class="mil-link mil-dark">
-                                <span>All projects</span>
-                            </a>
-                            <a href="#." class="mil-link mil-dark mil-arrow-place mil-disabled">
-                                <span>Next project</span>
-                            </a>
                         </div>
                     </div>
-
                 </section>
                 <!-- project end -->
 
@@ -464,7 +822,7 @@
                                                 <li><a href="#." target="_blank" class="social-icon"> <i class="far fa-circle"></i></a></li>
                                             </ul>
                                         </div>
-                                        <p class="mil-light-soft mil-up">© Copyright 2023 - Mil. All Rights Reserved.</p>
+                                        <p class="mil-light-soft mil-up"> 2023 - Mil. All Rights Reserved.</p>
                                     </div>
 
                                 </div>
@@ -477,34 +835,6 @@
                 <!-- hidden elements -->
                 <div class="mil-hidden-elements">
                     <div class="mil-dodecahedron">
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
                         <div class="mil-pentagon">
                             <div></div>
                             <div></div>

@@ -1,0 +1,48 @@
+/* Reset default margins, allow full height if you want vertical centering */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Center the main content container both horizontally and (optionally) vertically */
+.page-container {
+    display: flex;
+    flex-direction: column;   /* stack items vertically */
+    justify-content: center;  /* vertically center if there's enough screen height */
+    align-items: center;      /* horizontally center */
+    min-height: 100vh;        /* take full vertical space */
+    text-align: center;       /* center headings, paragraphs */
+    box-sizing: border-box;
+    padding: 20px;            /* some padding so it’s not flush to the edge */
+    background: #ffffff;      /* optional light background color */
+}
+
+/* Sudoku table styles */
+table {
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+/* Make cell borders stand out a bit more */
+td {
+    border: 2px solid #ffffff;
+}
+
+/* Enlarge the puzzle cells */
+input {
+    width: 2.7em;       /* bigger width */
+    height: 2.7em;      /* bigger height */
+    text-align: center;
+    font-size: 22px;    /* bigger font for readability */
+}
+
+/* More prominent hint box styling */
+#hint-container {
+    margin: 10px 0;
+    font-weight: bold;
+    color: #000000;
+    font-size: 18px;
+    min-height: 1.5em;   /* so it doesn't jump layout if empty */
+}
+

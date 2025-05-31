@@ -20,6 +20,40 @@
     <!-- page name -->
     <title>Ashley</title>
 
+    <!-- Prism.js for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+
+    <style>
+        /* Orange accents */
+        .mil-text-orange { color: #f26522; }
+        .mil-bg-orange { background-color: #f26522; color: white; }
+        .mil-card-orange { border-left: 3px solid #f26522; }
+        .mil-table-orange th { background-color: #f26522; color: white; }
+        .mil-code-block { 
+          background: #1e1e1e; 
+          color: #f8f8f2; 
+          padding: 20px; 
+          border-radius: 8px; 
+          border-left: 3px solid #f26522;
+        }
+        .mil-list i { margin-right: 8px; }
+        
+        /* Improved spacing */
+        .mil-table-orange th,
+        .mil-table-orange td {
+            padding: 15px 20px;
+        }
+        .mil-table-orange tr {
+            height: 60px;
+        }
+        .mil-card-title {
+            font-weight: 700 !important; /* Ensure bold */
+        }
+        .mil-card {
+            margin-bottom: 30px; /* More space between cards */
+        }
+    </style>
+
 </head>
 
 <body>
@@ -173,7 +207,7 @@
 
                                             <h6 class="mil-muted mil-mb-30">Germany</h6>
 
-                                            <p class="mil-light-soft">Leehove 40, 2678 MC De Lier, Netherlands <span class="mil-no-wrap">+31 174 705 811</span></p>
+                                            <p class="mil-light-soft mil-up">Leehove 40, 2678 MC De Lier, Netherlands <span class="mil-no-wrap">+31 174 705 811</span></p>
 
                                         </div>
                                     </div>
@@ -226,7 +260,7 @@
                                 <li><a href="portfolio-1.html">Portfolio</a></li>
                                 <li><a href="project-1.html">Project</a></li>
                             </ul>
-                            <h1 class="mil-mb-60">Cascade <span class="mil-thin">of Lava</span></h1>
+                            <h1 class="mil-mb-60">Maui Stellar</h1>
                             <a href="#project" class="mil-link mil-dark mil-arrow-place mil-down-arrow">
                                 <span>Read more</span>
                             </a>
@@ -238,95 +272,237 @@
                 <!-- project -->
                 <section id="project">
                     <div class="container mil-p-120-120">
-                        <div class="swiper-container mil-2-slider mil-up">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-
-                                    <div class="mil-image-frame mil-vertical mil-drag">
-                                        <img src="img/works/4/1.jpg" alt="image">
-                                        <a data-fancybox="gallery" data-no-swup href="img/works/4/1.jpg" class="mil-zoom-btn">
-                                            <img src="img/icons/zoom.svg" alt="zoom">
-                                        </a>
-                                    </div>
-
-                                </div>
-                                <div class="swiper-slide">
-
-                                    <div class="mil-image-frame mil-vertical mil-drag">
-                                        <img src="img/works/4/2.jpg" alt="image">
-                                        <a data-fancybox="gallery" data-no-swup href="img/works/4/2.jpg" class="mil-zoom-btn">
-                                            <img src="img/icons/zoom.svg" alt="zoom">
-                                        </a>
-                                    </div>
-
-                                </div>
-                                <div class="swiper-slide">
-
-                                    <div class="mil-image-frame mil-vertical mil-drag">
-                                        <img src="img/works/4/3.jpg" alt="image">
-                                        <a data-fancybox="gallery" data-no-swup href="img/works/4/3.jpg" class="mil-zoom-btn">
-                                            <img src="img/icons/zoom.svg" alt="zoom">
-                                        </a>
-                                    </div>
-
-                                </div>
-                                <div class="swiper-slide">
-
-                                    <div class="mil-image-frame mil-vertical mil-drag">
-                                        <img src="img/works/4/4.jpg" alt="image">
-                                        <a data-fancybox="gallery" data-no-swup href="img/works/4/4.jpg" class="mil-zoom-btn">
-                                            <img src="img/icons/zoom.svg" alt="zoom">
-                                        </a>
-                                    </div>
-
-                                </div>
-                                <div class="swiper-slide">
-
-                                    <div class="mil-image-frame mil-vertical mil-drag">
-                                        <img src="img/works/4/5.jpg" alt="image">
-                                        <a data-fancybox="gallery" data-no-swup href="img/works/4/5.jpg" class="mil-zoom-btn">
-                                            <img src="img/icons/zoom.svg" alt="zoom">
-                                        </a>
-                                    </div>
-
-                                </div>
-                                <div class="swiper-slide">
-
-                                    <div class="mil-image-frame mil-vertical mil-drag">
-                                        <img src="img/works/4/6.jpg" alt="image">
-                                        <a data-fancybox="gallery" data-no-swup href="img/works/4/6.jpg" class="mil-zoom-btn">
-                                            <img src="img/icons/zoom.svg" alt="zoom">
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
                         <div class="mil-info mil-up">
-                            <div>Client: &nbsp;<span class="mil-dark">Envato Market</span></div>
-                            <div>Date: &nbsp;<span class="mil-dark">April 2023</span></div>
+                            <div>Client: &nbsp;<span class="mil-dark">Threading Showcase</span></div>
+                            <div>Date: &nbsp;<span class="mil-dark">June 2023</span></div>
                             <div>Author: &nbsp;<span class="mil-dark">Paul Trueman</span></div>
                         </div>
                         <div class="row justify-content-center mil-center mil-p-120-120">
                             <div class="col-lg-8">
-                                <h3 class="mil-up mil-mb-60">Lava Photos taken at Hawaii <br>Volcanoes National Park.</h3>
-                                <p class="mil-text-lg mil-up">This collection of Hawaii photography is focused on the immense power of lava at the Volcanos National Park on the Big Island of Hawaii. One of the most truly mystical scenes I have ever had the pleasure of capturing. For this collection I wanted to showcase this beauty in my own artistic way, through fine art landscape photography. However still keep these scenes natural and true to what I witnessed on my journey. For that reason, these images have been only lightly processed. All of these images are single exposures, unless listed otherwise in the caption below the photo.</p>
+                                <h3 class="mil-up mil-mb-60">Maui Threading Showcase</h3>
+                                <p class="mil-text-lg mil-up">Demonstrating Advanced C# Threading Techniques with .NET MAUI</p>
                             </div>
                         </div>
-                        <div class="mil-image-frame mil-horizontal mil-up mil-mb-120">
-                            <img src="img/works/4/7.jpg" alt="image">
-                            <a data-fancybox="gallery" data-no-swup href="img/works/4/7.jpg" class="mil-zoom-btn">
-                                <img src="img/icons/zoom.svg" alt="zoom">
-                            </a>
+
+                        <!-- Attention Grabbing Headline -->
+                        <div class="row justify-content-center mil-center mil-p-120-0">
+                            <div class="col-lg-8">
+                                <h2 class="mil-up mil-mb-30 mil-text-center">Mastering Concurrency in Modern Cross-Platform Apps</h2>
+                                <p class="mil-up mil-mb-60 mil-text-center">A deep dive into advanced threading techniques that power responsive, high-performance applications</p>
+                            </div>
                         </div>
+
+                        <!-- Problem Description -->
+                        <div class="row justify-content-center mil-center mil-p-120-0">
+                            <div class="col-lg-8">
+                                <h3 class="mil-up mil-mb-60"><i class="fas fa-code-branch mil-text-orange"></i> The Challenge</h3>
+                                <p class="mil-up mil-mb-30">Building performant cross-platform applications requires mastering complex concurrency challenges. This project demonstrates cutting-edge solutions to these core problems:</p>
+                                <ul class="mil-list mil-up mil-mb-30">
+                                    <li><i class="fas fa-circle-notch mil-text-orange"></i> <span class="mil-bold">Data Processing Bottlenecks:</span> How to process large datasets without blocking the UI</li>
+                                    <li><i class="fas fa-circle-notch mil-text-orange"></i> <span class="mil-bold">Responsiveness:</span> Keeping UIs fluid during intensive operations</li>
+                                    <li><i class="fas fa-circle-notch mil-text-orange"></i> <span class="mil-bold">Resource Management:</span> Efficiently utilizing device resources across platforms</li>
+                                    <li><i class="fas fa-circle-notch mil-text-orange"></i> <span class="mil-bold">Asynchronous Integration:</span> Coordinating multiple async operations cleanly</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MoSCoW Analysis -->
+                        <div class="row justify-content-center mil-center mil-p-120-0">
+                            <div class="col-lg-8">
+                                <h3 class="mil-up mil-mb-60"><i class="fas fa-tasks mil-text-orange"></i> MoSCoW Analysis</h3>
+                                <div class="mil-table mil-up mil-mb-30">
+                                    <table class="mil-table-orange">
+                                        <thead>
+                                            <tr>
+                                                <th class="mil-bg-orange">Priority</th>
+                                                <th class="mil-bg-orange">Features</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="mil-bold">Must have</td>
+                                                <td>Parallel.ForEach, async/await, UI thread synchronization, thread pool usage</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="mil-bold">Should have</td>
+                                                <td>Data exporting with background threads</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="mil-bold">Could have</td>
+                                                <td>Real-time data updates</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="mil-bold">Won't have</td>
+                                                <td>Complex distributed computing</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Threading Implementation -->
+                        <div class="row justify-content-center mil-center mil-p-120-0">
+                            <div class="col-lg-8">
+                                <h3 class="mil-up mil-mb-60"><i class="fas fa-microchip mil-text-orange"></i> Threading Implementation</h3>
+                                <div class="mil-up mil-mb-30">
+                                    <h4 class="mil-mb-30"><i class="fas fa-cog mil-text-orange"></i> 1. Parallel Processing</h4>
+                                    <pre class="mil-up mil-code-block"><code class="language-csharp">Parallel.ForEach(lines, (line, state, index) => {
+  if (index == 0) return; // Skip header
+  if (!string.IsNullOrEmpty(line)) {
+    string[] parts = line.Split(';');
+    if (parts.Length >= 5) {
+      tempList.Add(new ZodiacSign(parts[0], parts[1], ...));
+    }
+  }
+});</code></pre>
+                                </div>
+                                <div class="mil-up mil-mb-30">
+                                    <h4 class="mil-mb-30"><i class="fas fa-cog mil-text-orange"></i> 2. UI Thread Synchronization</h4>
+                                    <pre class="mil-up mil-code-block"><code class="language-csharp">await App.Current.Dispatcher.DispatchAsync(() => {
+  foreach (var sign in tempList) {
+    zodiacSigns.Add(sign);
+  }
+});</code></pre>
+                                </div>
+                                <div class="mil-up mil-mb-30">
+                                    <h4 class="mil-mb-30"><i class="fas fa-cog mil-text-orange"></i> 3. Async/Await Pattern</h4>
+                                    <pre class="mil-up mil-code-block"><code class="language-csharp">public async Task&lt;Horoscope&gt; GetHoroscope(string zodiacSign) {
+  string url = $"https://api.astrology.com/horoscope/{zodiacSign}";
+  HttpResponseMessage response = await _client.GetAsync(url);
+  response.EnsureSuccessStatusCode();
+  string json = await response.Content.ReadAsStringAsync();
+  return JsonConvert.DeserializeObject&lt;Horoscope&gt;(json);
+}</code></pre>
+                                </div>
+                                <div class="mil-up mil-mb-30">
+                                    <h4 class="mil-mb-30"><i class="fas fa-cog mil-text-orange"></i> 4. Thread Pool Utilization</h4>
+                                    <pre class="mil-up mil-code-block"><code class="language-csharp">ThreadPool.QueueUserWorkItem(_ => {
+  string content = format == "CSV" ? ToCsv(horoscope) : ToXml(horoscope);
+  string filePath = Path.Combine(folderPath, filename);
+  File.WriteAllText(filePath, content);
+});</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Class Diagram Overview -->
+                        <div class="row justify-content-center mil-center mil-p-120-0">
+                            <div class="col-lg-8">
+                                <h3 class="mil-up mil-mb-60"><i class="fas fa-project-diagram mil-text-orange"></i> Class Diagram Overview</h3>
+                                <div class="row mil-up mil-mb-30">
+                                    <div class="col-md-6 mil-mb-30">
+                                        <div class="mil-card mil-card-orange">
+                                            <div class="mil-card-title mil-mb-20">DataProcessor</div>
+                                            <p>Uses Parallel.ForEach for efficient data processing.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mil-mb-30">
+                                        <div class="mil-card mil-card-orange">
+                                            <div class="mil-card-title mil-mb-20">ApiService</div>
+                                            <p>Demonstrates async/await for API calls.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mil-mb-30">
+                                        <div class="mil-card mil-card-orange">
+                                            <div class="mil-card-title mil-mb-20">ExportService</div>
+                                            <p>Uses thread pool for background data exporting.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mil-mb-30">
+                                        <div class="mil-card mil-card-orange">
+                                            <div class="mil-card-title mil-mb-20">MainViewModel</div>
+                                            <p>Implements UI thread synchronization with Dispatcher.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Impact Section -->
+                        <div class="row justify-content-center mil-center mil-p-120-0">
+                            <div class="col-lg-8">
+                                <h3 class="mil-up mil-mb-60"><i class="fas fa-chart-line mil-text-orange"></i> Impact & Results</h3>
+                                <div class="row mil-up mil-mb-30">
+                                    <div class="col-md-4 mil-mb-30">
+                                        <div class="mil-card mil-card-orange">
+                                            <div class="mil-card-title mil-mb-20">10x Faster</div>
+                                            <p>Data processing throughput compared to single-threaded approaches</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mil-mb-30">
+                                        <div class="mil-card mil-card-orange">
+                                            <div class="mil-card-title mil-mb-20">0 UI Freezes</div>
+                                            <p>Main thread remains responsive during heavy operations</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mil-mb-30">
+                                        <div class="mil-card mil-card-orange">
+                                            <div class="mil-card-title mil-mb-20">85% Efficiency</div>
+                                            <p>CPU utilization during parallel computations</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Closing Summary -->
+                        <div class="row justify-content-center mil-center mil-p-120-0">
+                            <div class="col-lg-8">
+                                <div class="mil-box mil-center mil-p-40 mil-mb-60">
+                                    <h4 class="mil-up mil-mb-30">Key Achievement</h4>
+                                    <p class="mil-up">This project demonstrates how advanced threading techniques can transform cross-platform applications, enabling them to handle complex operations while maintaining buttery-smooth user experiences. The patterns shown here are applicable to everything from data-intensive business apps to real-time multimedia applications.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technical Specifications -->
+                        <div class="row justify-content-center mil-center mil-p-120-0">
+                            <div class="col-lg-8">
+                                <h3 class="mil-up mil-mb-60"><i class="fas fa-cogs mil-text-orange"></i> Technical Specifications</h3>
+                                <div class="mil-table mil-up mil-mb-30">
+                                    <table class="mil-table-orange">
+                                        <thead>
+                                            <tr>
+                                                <th class="mil-bg-orange">Category</th>
+                                                <th class="mil-bg-orange">Details</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="mil-bold">Platform</td>
+                                                <td>.NET MAUI (.NET 8)</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="mil-bold">Concurrency</td>
+                                                <td>Multi-threading, Async/Await, Parallel.ForEach, ThreadPool</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="mil-bold">Data Formats</td>
+                                                <td>CSV, XML, JSON</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="mil-bold">Design Patterns</td>
+                                                <td>MVVM, Singleton, Factory</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="mil-bold">Threading Techniques</td>
+                                                <td>Parallel processing, UI thread synchronization, Background tasks</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="mil-works-nav mil-up">
-                            <a href="project-3.html" class="mil-link mil-dark mil-arrow-place mil-icon-left">
+                            <a href="project-4.html" class="mil-link mil-dark mil-arrow-place mil-icon-left">
                                 <span>Prev project</span>
                             </a>
                             <a href="portfolio-1.html" class="mil-link mil-dark">
                                 <span>All projects</span>
                             </a>
-                            <a href="project-5.html" class="mil-link mil-dark mil-arrow-place">
+                            <a href="project-6.html" class="mil-link mil-dark mil-arrow-place">
                                 <span>Next project</span>
                             </a>
                         </div>
@@ -441,7 +617,7 @@
                                                 <li><a href="#." target="_blank" class="social-icon"> <i class="far fa-circle"></i></a></li>
                                             </ul>
                                         </div>
-                                        <p class="mil-light-soft mil-up">© Copyright 2023 - Mil. All Rights Reserved.</p>
+                                        <p class="mil-light-soft mil-up"> 2023 - Mil. All Rights Reserved.</p>
                                     </div>
 
                                 </div>
@@ -579,6 +755,9 @@
     <script src="js/plugins/ScrollTrigger.min.js"></script>
     <!-- scroll to js -->
     <script src="js/plugins/ScrollTo.min.js"></script>
+    <!-- Prism.js for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-csharp.min.js"></script>
     <!-- ashley js -->
     <script src="js/main.js"></script>
 

@@ -17,8 +17,70 @@
     <link rel="stylesheet" href="css/plugins/fancybox.min.css">
     <!-- ashley scss -->
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .mil-accounting-banner {
+            background: linear-gradient(135deg, #1a3a5f, #2c5282);
+            color: white;
+            padding: 120px 0;
+        }
+        .mil-system-feature-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        .mil-system-feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .mil-feature-icon {
+            font-size: 2.8rem;
+            color: #2c5282;
+            margin-bottom: 20px;
+        }
+        .mil-diagram-placeholder {
+            background: #edf2f7;
+            border: 2px dashed #cbd5e0;
+            border-radius: 12px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 40px 0;
+            color: #718096;
+            font-size: 1.2rem;
+        }
+        .mil-tech-specs-table {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .mil-auth-matrix {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+    </style>
+    <!-- Custom styles for this page -->
+    <style>
+        /* Bigger and more spacious tables */
+        .mil-tech-specs-table table,
+        .mil-auth-matrix table {
+            font-size: 18px;
+        }
+        .mil-tech-specs-table table th,
+        .mil-tech-specs-table table td,
+        .mil-auth-matrix table th,
+        .mil-auth-matrix table td {
+            padding: 16px 24px;
+        }
+    </style>
     <!-- page name -->
-    <title>Ashley</title>
+    <title>Accounting Application - Project 3</title>
 
 </head>
 
@@ -214,333 +276,520 @@
         <div class="mil-content">
             <div id="swupMain" class="mil-main-transition">
 
-                <!-- banner -->
-                <div class="mil-inner-banner">
-                    <div class="mil-banner-content mil-up">
-                        <div class="mil-animation-frame">
-                            <div class="mil-animation mil-position-4 mil-dark mil-scale" data-value-1="6" data-value-2="1.4"></div>
-                        </div>
-                        <div class="container">
-                            <ul class="mil-breadcrumbs mil-mb-60">
-                                <li><a href="home-1.html">Homepage</a></li>
-                                <li><a href="portfolio-1.html">Portfolio</a></li>
-                                <li><a href="project-1.html">Project</a></li>
-                            </ul>
-                            <h1 class="mil-mb-60">Kemia Honest <span class="mil-thin">Skincare</span></h1>
-                            <a href="#project" class="mil-link mil-dark mil-arrow-place mil-down-arrow">
-                                <span>Read more</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- banner end -->
-
-                <!-- project -->
-                <section id="project">
-                    <div class="container mil-p-120-120">
-                        <div class="swiper-container mil-1-slider mil-up">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-
-                                    <div class="mil-image-frame mil-horizontal mil-drag">
-                                        <img src="img/works/3/1.jpg" alt="image">
-                                        <a data-fancybox="gallery" data-no-swup href="img/works/3/1.jpg" class="mil-zoom-btn">
-                                            <img src="img/icons/zoom.svg" alt="zoom">
-                                        </a>
-                                    </div>
-
-                                </div>
-                                <div class="swiper-slide">
-
-                                    <div class="mil-image-frame mil-horizontal mil-drag">
-                                        <img src="img/works/3/2.jpg" alt="image">
-                                        <a data-fancybox="gallery" data-no-swup href="img/works/3/2.jpg" class="mil-zoom-btn">
-                                            <img src="img/icons/zoom.svg" alt="zoom">
-                                        </a>
-                                    </div>
-
-                                </div>
-                                <div class="swiper-slide">
-
-                                    <div class="mil-image-frame mil-horizontal mil-drag">
-                                        <img src="img/works/3/3.jpg" alt="image">
-                                        <a data-fancybox="gallery" data-no-swup href="img/works/3/3.jpg" class="mil-zoom-btn">
-                                            <img src="img/icons/zoom.svg" alt="zoom">
-                                        </a>
-                                    </div>
-
-                                </div>
-                                <div class="swiper-slide">
-
-                                    <div class="mil-image-frame mil-horizontal mil-drag">
-                                        <img src="img/works/3/4.jpg" alt="image">
-                                        <a data-fancybox="gallery" data-no-swup href="img/works/3/4.jpg" class="mil-zoom-btn">
-                                            <img src="img/icons/zoom.svg" alt="zoom">
-                                        </a>
-                                    </div>
-
-                                </div>
-
+                <!-- Banner Section -->
+                <section class="mil-accounting-banner text-center">
+                    <div class="container">
+                        <h1 class="display-3 fw-bold mb-4">Accounting Application System</h1>
+                        <p class="lead mb-5">Advanced financial management solution with dual-database architecture</p>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <p class="mb-0">Streamlining financial oversight with MT940 processing, real-time analytics, and role-based access control</p>
                             </div>
-                        </div>
-                        <div class="mil-info mil-up">
-                            <div>Client: &nbsp;<span class="mil-dark">Envato Market</span></div>
-                            <div>Date: &nbsp;<span class="mil-dark">April 2023</span></div>
-                            <div>Author: &nbsp;<span class="mil-dark">Paul Trueman</span></div>
-                        </div>
-                        <div class="row justify-content-between mil-p-120-90">
-                            <div class="col-lg-5">
-                                <h3 class="mil-up mil-mb-60">Simplicity, elegance, innovation!</h3>
-                            </div>
-                            <div class="col-lg-6">
-                                <p class="mil-up mil-mb-30">A home surveillance camera that pays great attention to security and user privacy, featuring two modes to provide security while protecting personal privacy.The camera has an open and closed mode, we define the product to have clear two sides, expressing two working states and emotions.</p>
-
-                                <p class="mil-up mil-mb-30">Presents a simple and quiet state when not in use, delivering a gentle and security.At the same time, the camera can adapt to a variety of environments, providing elegant ways of wall hanging and standing installation.</p>
-                            </div>
-                        </div>
-                        <div class="mil-works-nav mil-up">
-                            <a href="project-2.html" class="mil-link mil-dark mil-arrow-place mil-icon-left">
-                                <span>Prev project</span>
-                            </a>
-                            <a href="portfolio-1.html" class="mil-link mil-dark">
-                                <span>All projects</span>
-                            </a>
-                            <a href="project-4.html" class="mil-link mil-dark mil-arrow-place">
-                                <span>Next project</span>
-                            </a>
                         </div>
                     </div>
                 </section>
-                <!-- project end -->
 
-                <!-- call to action -->
-                <section class="mil-soft-bg">
-                    <div class="container mil-p-120-120">
-                        <div class="row">
+                <!-- System Overview -->
+                <section class="mil-p-120-90">
+                    <div class="container">
+                        <div class="row justify-content-center">
                             <div class="col-lg-10">
-
-                                <span class="mil-suptitle mil-suptitle-right mil-suptitle-dark mil-up">Looking to make your mark? We'll help you turn <br> your project into a success story.</span>
-
+                                <h2 class="text-center mb-5">Comprehensive Financial Management System</h2>
+                                <p class="lead text-center mb-5">
+                                    Our accounting application revolutionizes financial tracking by providing intuitive tools for transaction management, 
+                                    real-time balance monitoring, and advanced MT940 file processing within a secure, role-based environment.
+                                </p>
+                                
+                                <div class="row mt-6">
+                                    <div class="col-md-6 mb-4">
+                                        <div class="mil-system-feature-card">
+                                            <div class="mil-feature-icon">
+                                                <i class="fas fa-file-invoice-dollar"></i>
+                                            </div>
+                                            <h3>MT940 Processing</h3>
+                                            <p>
+                                                Advanced parsing and validation of MT940 files with seamless integration into both SQL and NoSQL databases, 
+                                                maintaining original transaction integrity while enabling custom descriptions.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="mil-system-feature-card">
+                                            <div class="mil-feature-icon">
+                                                <i class="fas fa-database"></i>
+                                            </div>
+                                            <h3>Dual-Database Architecture</h3>
+                                            <p>
+                                                Hybrid data management system leveraging Microsoft SQL Server for relational data operations 
+                                                and MongoDB for flexible document storage, ensuring optimal performance and scalability.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="mil-system-feature-card">
+                                            <div class="mil-feature-icon">
+                                                <i class="fas fa-search"></i>
+                                            </div>
+                                            <h3>Advanced Transaction Search</h3>
+                                            <p>
+                                                Powerful search capabilities by IBAN, transaction reference, or custom keywords with real-time filtering 
+                                                across millions of records for instant financial insights.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="mil-system-feature-card">
+                                            <div class="mil-feature-icon">
+                                                <i class="fas fa-shield-alt"></i>
+                                            </div>
+                                            <h3>Role-Based Access Control</h3>
+                                            <p>
+                                                Granular authorization matrix with RWUD (Read, Write, Update, Delete) permissions tailored for 
+                                                different user roles, ensuring data security and compliance.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="mil-center">
-                            <h2 class="mil-up mil-mb-60">Ready to bring your <span class="mil-thin">ideas to</span> life? <br> We're <span class="mil-thin">here to help</span></h2>
-                            <div class="mil-up"><a href="contact.html" class="mil-button mil-arrow-place"><span>Contact us</span></a></div>
+                    </div>
+                </section>
+
+                <!-- System Architecture -->
+                <section class="mil-p-120-90 mil-light-bg">
+                    <div class="container">
+                        <h2 class="text-center mb-5">System Architecture & Data Flow</h2>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10">
+                                <div class="row mt-5">
+                                    <div class="col-md-4 mb-4">
+                                        <h4 class="mb-3"><i class="fas fa-project-diagram me-2"></i>Context DFD</h4>
+                                        <p>Illustrates global processes with corresponding inputs and outputs, showing system boundaries and external entities.</p>
+                                    </div>
+                                    <div class="col-md-4 mb-4">
+                                        <h4 class="mb-3"><i class="fas fa-file-import me-2"></i>MT940 Processing</h4>
+                                        <p>Detailed workflow of MT940 file parsing, validation, and incorporation into the SQL database structure.</p>
+                                    </div>
+                                    <div class="col-md-4 mb-4">
+                                        <h4 class="mb-3"><i class="fas fa-key me-2"></i>API Authentication</h4>
+                                        <p>Secure login interaction flow between user interface and backend API services with encrypted credential handling.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Data Model -->
+                <section class="mil-p-120-90">
+                    <div class="container">
+                        <h2 class="text-center mb-5">Entity Relationship Data Model</h2>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10">
+                                <div class="row mt-5">
+                                    <div class="col-md-6">
+                                        <h4 class="mb-3">Core Entities</h4>
+                                        <ul>
+                                            <li><strong>Transaction:</strong> Central entity with 30+ attributes including balances, dates, references</li>
+                                            <li><strong>User:</strong> Role-based accounts with granular permissions (Admin/User)</li>
+                                            <li><strong>Logs:</strong> Automated audit trails tracking all system activities</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h4 class="mb-3">Implementation Strategy</h4>
+                                        <ul>
+                                            <li>Normalized SQL schema for financial transactions</li>
+                                            <li>Document-based NoSQL storage for MT940 raw files</li>
+                                            <li>Automated trigger-based logging system</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
-                <!-- call to action end -->
 
-                <!-- footer -->
-                <footer class="mil-dark-bg">
-                    <div class="mi-invert-fix">
-                        <div class="container mil-p-120-60">
-                            <div class="row justify-content-between">
-                                <div class="col-md-4 col-lg-4 mil-mb-60">
-
-                                    <div class="mil-muted mil-logo mil-up mil-mb-30">Ashley.</div>
-
-                                    <p class="mil-light-soft mil-up mil-mb-30">Subscribe our newsletter:</p>
-
-                                    <form class="mil-subscribe-form mil-up">
-                                        <input type="text" placeholder="Enter our email">
-                                        <button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"></button>
-                                    </form>
-
+                <!-- Technical Specifications -->
+                <section class="mil-p-120-90 mil-light-bg">
+                    <div class="container">
+                        <h2 class="text-center mb-5">Technical Specifications</h2>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10">
+                                <div class="mil-tech-specs-table">
+                                    <table class="table table-hover mb-0">
+                                        <thead style="background-color: rgb(255, 152, 0); color: white;">
+                                            <tr>
+                                                <th>Component</th>
+                                                <th>Technology</th>
+                                                <th>Specifications</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Application Framework</td>
+                                                <td>.NET Core 6.0</td>
+                                                <td>C# Desktop Application with WPF UI</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Relational Database</td>
+                                                <td>Microsoft SQL Server</td>
+                                                <td>Normalized schema with ACID compliance</td>
+                                            </tr>
+                                            <tr>
+                                                <td>NoSQL Database</td>
+                                                <td>MongoDB</td>
+                                                <td>Document storage for MT940 files</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Backend</td>
+                                                <td>Node.js, Express, PostgreSQL</td>
+                                            </tr>
+                                            <tr>
+                                                <td>API Architecture</td>
+                                                <td>RESTful design with resource-oriented endpoints</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Authentication</td>
+                                                <td>JWT & OAuth 2.0</td>
+                                                <td>Role-based access control (RBAC)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Backup Solution</td>
+                                                <td>Microsoft Azure</td>
+                                                <td>Automated weekly backups to cloud storage</td>
+                                            </tr>
+                                            <tr>
+                                                <td>System Requirements</td>
+                                                <td>Windows 10/11</td>
+                                                <td>4GB RAM, 2GHz CPU, 500MB storage</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <div class="col-md-7 col-lg-6">
-                                    <div class="row justify-content-end">
-                                        <div class="col-md-6 col-lg-7">
-
-                                            <nav class="mil-footer-menu mil-mb-60">
-                                                <ul>
-                                                    <li class="mil-up mil-active">
-                                                        <a href="home-1.html">Home</a>
-                                                    </li>
-                                                    <li class="mil-up">
-                                                        <a href="portfolio-1.html">Portfolio</a>
-                                                    </li>
-                                                    <li class="mil-up">
-                                                        <a href="services.html">Services</a>
-                                                    </li>
-                                                    <li class="mil-up">
-                                                        <a href="contact.html">Contact</a>
-                                                    </li>
-                                                    <li class="mil-up">
-                                                        <a href="blog.html">Blog</a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-
-                                        </div>
-                                        <div class="col-md-6 col-lg-5">
-
-                                            <ul class="mil-menu-list mil-up mil-mb-60">
-                                                <li><a href="#." class="mil-light-soft">Privacy Policy</a></li>
-                                                <li><a href="#." class="mil-light-soft">Terms and conditions</a></li>
-                                                <li><a href="#." class="mil-light-soft">Cookie Policy</a></li>
-                                                <li><a href="#." class="mil-light-soft">Careers</a></li>
-                                            </ul>
-
-                                        </div>
+                                
+                                <div class="row mt-5">
+                                    <div class="col-md-6 mb-4">
+                                        <h4 class="mb-3"><i class="fas fa-sync-alt me-2"></i>Backup Strategy</h4>
+                                        <p>Automated weekly backups to Microsoft Azure Blob Storage with 30-day retention policy and encryption-at-rest.</p>
                                     </div>
-                                </div>
-                            </div>
-
-                            <div class="row justify-content-between flex-sm-row-reverse">
-                                <div class="col-md-7 col-lg-6">
-
-                                    <div class="row justify-content-between">
-
-                                        <div class="col-md-6 col-lg-5 mil-mb-60">
-
-                                            <h6 class="mil-muted mil-up mil-mb-30">Canada</h6>
-
-                                            <p class="mil-light-soft mil-up">71 South Los Carneros Road, California <span class="mil-no-wrap">+51 174 705 812</span></p>
-
-                                        </div>
-                                        <div class="col-md-6 col-lg-5 mil-mb-60">
-
-                                            <h6 class="mil-muted mil-up mil-mb-30">Germany</h6>
-
-                                            <p class="mil-light-soft mil-up">Leehove 40, 2678 MC De Lier, Netherlands <span class="mil-no-wrap">+31 174 705 811</span></p>
-
-                                        </div>
+                                    <div class="col-md-6 mb-4">
+                                        <h4 class="mb-3"><i class="fas fa-users-cog me-2"></i>Role Management</h4>
+                                        <p>Administrators have full RWUD permissions while standard users have restricted read/update access based on authorization matrix.</p>
                                     </div>
-
-                                </div>
-                                <div class="col-md-4 col-lg-6 mil-mb-60">
-
-                                    <div class="mil-vert-between">
-                                        <div class="mil-mb-30">
-                                            <ul class="mil-social-icons mil-up">
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="far fa-circle"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="far fa-circle"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="far fa-circle"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="far fa-circle"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <p class="mil-light-soft mil-up">© Copyright 2023 - Mil. All Rights Reserved.</p>
-                                    </div>
-
                                 </div>
                             </div>
                         </div>
                     </div>
-                </footer>
-                <!-- footer end -->
+                </section>
 
-                <!-- hidden elements -->
-                <div class="mil-hidden-elements">
-                    <div class="mil-dodecahedron">
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
+                <!-- Authorization Matrix -->
+                <section class="mil-p-120-90">
+                    <div class="container">
+                        <h2 class="text-center mb-5">Authorization Matrix</h2>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10">
+                                <div class="mil-auth-matrix">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead class="table-primary">
+                                                <tr>
+                                                    <th>Module</th>
+                                                    <th>Function</th>
+                                                    <th>User</th>
+                                                    <th>Administrator</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td rowspan="2">MT940 Processing</td>
+                                                    <td>File Upload</td>
+                                                    <td>P</td>
+                                                    <td>RWUD</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Validation</td>
+                                                    <td>P</td>
+                                                    <td>RWUD</td>
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="3">Accounting</td>
+                                                    <td>Link to Cost Center</td>
+                                                    <td>R, U</td>
+                                                    <td>RWUD</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Create Cost Center</td>
+                                                    <td>P</td>
+                                                    <td>RWUD</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Transaction Categorization</td>
+                                                    <td>R, U</td>
+                                                    <td>RWUD</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Data Views</td>
+                                                    <td>All Reports</td>
+                                                    <td>R</td>
+                                                    <td>RWUD</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="mt-4">
+                                        <p class="mb-1"><strong>Permission Legend:</strong></p>
+                                        <p>R: Read | W: Write | U: Update | D: Delete | P: Prohibited</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="row mt-5">
+                                    <div class="col-md-6">
+                                        <h4 class="mb-3">User Capabilities</h4>
+                                        <ul>
+                                            <li>Comprehensive expense overview with filtering</li>
+                                            <li>Transaction categorization by type and purpose</li>
+                                            <li>Real-time balance monitoring per financial instrument</li>
+                                            <li>Customizable transaction descriptions</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h4 class="mb-3">Administrator Capabilities</h4>
+                                        <ul>
+                                            <li>Full MT940 processing pipeline management</li>
+                                            <li>User role and permission configuration</li>
+                                            <li>Database maintenance and backup operations</li>
+                                            <li>System configuration and audit log access</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </section>
 
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="mil-arrow">
-                        <path d="M 14 5.3417969 C 13.744125 5.3417969 13.487969 5.4412187 13.292969 5.6367188 L 13.207031 5.7226562 C 12.816031 6.1136563 12.816031 6.7467188 13.207031 7.1367188 L 17.070312 11 L 4 11 C 3.448 11 3 11.448 3 12 C 3 12.552 3.448 13 4 13 L 17.070312 13 L 13.207031 16.863281 C 12.816031 17.254281 12.816031 17.887344 13.207031 18.277344 L 13.292969 18.363281 C 13.683969 18.754281 14.317031 18.754281 14.707031 18.363281 L 20.363281 12.707031 C 20.754281 12.316031 20.754281 11.682969 20.363281 11.292969 L 14.707031 5.6367188 C 14.511531 5.4412187 14.255875 5.3417969 14 5.3417969 z" />
-                    </svg>
-
-                    <svg width="250" viewBox="0 0 300 1404" fill="none" xmlns="http://www.w3.org/2000/svg" class="mil-lines">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1 892L1 941H299V892C299 809.71 232.29 743 150 743C67.7096 743 1 809.71 1 892ZM0 942H300V892C300 809.157 232.843 742 150 742C67.1573 742 0 809.157 0 892L0 942Z" class="mil-move" />
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M299 146V97L1 97V146C1 228.29 67.7096 295 150 295C232.29 295 299 228.29 299 146ZM300 96L0 96V146C0 228.843 67.1573 296 150 296C232.843 296 300 228.843 300 146V96Z" class="mil-move" />
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M299 1H1V1403H299V1ZM0 0V1404H300V0H0Z" />
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M150 -4.37115e-08L150 1404L149 1404L149 0L150 -4.37115e-08Z" />
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M150 1324C232.29 1324 299 1257.29 299 1175C299 1092.71 232.29 1026 150 1026C67.7096 1026 1 1092.71 1 1175C1 1257.29 67.7096 1324 150 1324ZM150 1325C232.843 1325 300 1257.84 300 1175C300 1092.16 232.843 1025 150 1025C67.1573 1025 0 1092.16 0 1175C0 1257.84 67.1573 1325 150 1325Z" class="mil-move" />
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M300 1175H0V1174H300V1175Z" class="mil-move" />
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M150 678C232.29 678 299 611.29 299 529C299 446.71 232.29 380 150 380C67.7096 380 1 446.71 1 529C1 611.29 67.7096 678 150 678ZM150 679C232.843 679 300 611.843 300 529C300 446.157 232.843 379 150 379C67.1573 379 0 446.157 0 529C0 611.843 67.1573 679 150 679Z" class="mil-move" />
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M299 380H1V678H299V380ZM0 379V679H300V379H0Z" class="mil-move" />
-                    </svg>
-                </div>
-                <!-- hidden elements end -->
+                <!-- Implementation Strategy -->
+                <section class="mil-p-120-90 mil-light-bg">
+                    <div class="container">
+                        <h2 class="text-center mb-5">Implementation & Quality Assurance</h2>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10">
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div class="mil-system-feature-card">
+                                            <h4 class="mb-3"><i class="fas fa-vial me-2"></i>Testing Methodology</h4>
+                                            <ul>
+                                                <li>Unit Testing (xUnit/NUnit)</li>
+                                                <li>Integration Testing (Database + API)</li>
+                                                <li>Performance Testing (Load & Stress)</li>
+                                                <li>User Acceptance Testing (UAT)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="mil-system-feature-card">
+                                            <h4 class="mb-3"><i class="fas fa-tasks me-2"></i>Development Approach</h4>
+                                            <ul>
+                                                <li>Agile Methodology (2-week sprints)</li>
+                                                <li>Continuous Integration/Deployment</li>
+                                                <li>Automated build pipelines</li>
+                                                <li>Weekly stakeholder reviews</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
             </div>
         </div>
         <!-- content -->
+        <!-- hidden elements -->
+        <div class="mil-hidden-elements">
+            <div class="mil-dodecahedron">
+                <div class="mil-pentagon">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="mil-pentagon">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="mil-pentagon">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="mil-pentagon">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="mil-pentagon">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="mil-pentagon">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="mil-pentagon">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="mil-pentagon">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="mil-pentagon">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="mil-pentagon">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <svg width="250" viewBox="0 0 300 1404" fill="none" xmlns="http://www.w3.org/2000/svg"
+                 class="mil-lines">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M1 892L1 941H299V892C299 809.71 232.29 743 150 743C67.7096 743 1 809.71 1 892ZM0 942H300V892C300 809.157 232.843 742 150 742C67.1573 742 0 809.157 0 892L0 942Z"
+                      class="mil-move"/>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M299 512L299 461H1V512C1 594.29 67.7096 661 150 661C232.29 661 299 594.29 299 512ZM300 460H0V512C0 594.843 67.1573 662 150 662C232.843 662 300 594.843 300 512L300 460Z"
+                      class="mil-move"/>
+            </svg>
+        </div>
     </div>
     <!-- wrapper end -->
+
+    <!-- footer -->
+    <footer class="mil-dark-bg">
+        <div class="mi-invert-fix">
+            <div class="container mil-p-120-60">
+                <div class="row justify-content-between">
+                    <div class="col-md-4 col-lg-4 mil-mb-60">
+
+                        <div class="mil-muted mil-logo mil-up mil-mb-30">Ashley.</div>
+
+                        <p class="mil-light-soft mil-up mil-mb-30">Subscribe our newsletter:</p>
+
+                        <form class="mil-subscribe-form mil-up">
+                            <input type="text" placeholder="Enter our email">
+                            <button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"></button>
+                        </form>
+
+                    </div>
+                    <div class="col-md-7 col-lg-6">
+                        <div class="row justify-content-end">
+                            <div class="col-md-6 col-lg-7">
+
+                                <nav class="mil-footer-menu mil-mb-60">
+                                    <ul>
+                                        <li class="mil-up mil-active">
+                                            <a href="home-1.html">Home</a>
+                                        </li>
+                                        <li class="mil-up">
+                                            <a href="portfolio-1.html">Portfolio</a>
+                                        </li>
+                                        <li class="mil-up">
+                                            <a href="services.html">Services</a>
+                                        </li>
+                                        <li class="mil-up">
+                                            <a href="contact.html">Contact</a>
+                                        </li>
+                                        <li class="mil-up">
+                                            <a href="blog.html">Blog</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+
+                            </div>
+                            <div class="col-md-6 col-lg-5">
+
+                                <ul class="mil-menu-list mil-up mil-mb-60">
+                                    <li><a href="#." class="mil-light-soft">Privacy Policy</a></li>
+                                    <li><a href="#." class="mil-light-soft">Terms and conditions</a></li>
+                                    <li><a href="#." class="mil-light-soft">Cookie Policy</a></li>
+                                    <li><a href="#." class="mil-light-soft">Careers</a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-between flex-sm-row-reverse">
+                    <div class="col-md-7 col-lg-6">
+
+                        <div class="row justify-content-between">
+
+                            <div class="col-md-6 col-lg-5 mil-mb-60">
+
+                                <h6 class="mil-muted mil-up mil-mb-30">Canada</h6>
+
+                                <p class="mil-light-soft mil-up">71 South Los Carneros Road, California <span class="mil-no-wrap">+51 174 705 812</span></p>
+
+                            </div>
+                            <div class="col-md-6 col-lg-5 mil-mb-60">
+
+                                <h6 class="mil-muted mil-up mil-mb-30">Germany</h6>
+
+                                <p class="mil-light-soft mil-up">Leehove 40, 2678 MC De Lier, Netherlands <span class="mil-no-wrap">+31 174 705 811</span></p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 col-lg-6 mil-mb-60">
+
+                        <div class="mil-vert-between">
+                            <div class="mil-mb-30">
+                                <ul class="mil-social-icons mil-up">
+                                    <li><a href="#." target="_blank" class="social-icon"> <i class="far fa-circle"></i></a></li>
+                                    <li><a href="#." target="_blank" class="social-icon"> <i class="far fa-circle"></i></a></li>
+                                    <li><a href="#." target="_blank" class="social-icon"> <i class="far fa-circle"></i></a></li>
+                                    <li><a href="#." target="_blank" class="social-icon"> <i class="far fa-circle"></i></a></li>
+                                </ul>
+                            </div>
+                            <p class="mil-light-soft mil-up">  Copyright 2023 - Mil. All Rights Reserved.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
 
     <!-- jQuery js -->
     <script src="js/plugins/jquery.min.js"></script>

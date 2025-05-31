@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- bootstrap grid css -->
+  <link rel="stylesheet" href="css/plugins/bootstrap-grid.css">
+  <!-- font awesome css -->
+  <link rel="stylesheet" href="css/plugins/font-awesome.min.css">
+  <!-- swiper css -->
+  <link rel="stylesheet" href="css/plugins/swiper.min.css">
+  <!-- fancybox css -->
+  <link rel="stylesheet" href="css/plugins/fancybox.min.css">
+  <!-- ashley scss -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- page name -->
+  <title>Ashley</title>
+
+  <!-- Prism.js for syntax highlighting -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-csharp.min.js"></script>
+
+  <style>
+    :root {
+      --primary: rgba(255, 126, 95, 0);
+      --primary-light: #907e7a;
+      --secondary: #4a6fa5;
+      --dark: #2c3e50;
+      --light: #f8f9fa;
+      --gray: #6c757d;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #333; /* Changed from #444 to #333 for better contrast */
+      line-height: 1.6;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+      color: var(--dark);
+    }
+    
+    .mil-inner-banner {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      padding: 120px 0;
+      color: white;
+    }
+    
+    .mil-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      padding: 40px;
+      margin-bottom: 40px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: none;
+    }
+    
+    .mil-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+    
+    .mil-card-blue {
+      border-left: none;
+    }
+    
+    .mil-card h4 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    
+    .mil-code-block {
+      background: #1e1e1e !important; /* VS Code dark theme */
+      color: #d4d4d4;
+      border-radius: 8px;
+      padding: 20px;
+      border: none;
+      font-size: 16px;
+      font-family: 'Monaco', monospace;
+    }
+    
+    .token.keyword { color: #569cd6; }
+    .token.class-name { color: #4ec9b0; }
+    .token.string { color: #ce9178; }
+    .token.comment { color: #6a9955; }
+    .token.punctuation { color: #d4d4d4; }
+    
+    .mil-section-title {
+      position: relative;
+      padding-bottom: 20px;
+      margin-bottom: 40px;
+    }
+    
+    .mil-section-title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+    
+    .mil-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .mil-table th {
+      background: var(--primary);
+      color: white;
+      padding: 15px 20px;
+      text-align: left;
+    }
+    
+    .mil-table td {
+      padding: 15px 20px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .mil-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .mil-algo-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+    
+    .mil-algo-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+    
+    .mil-bullet-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .mil-bullet-list li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 10px;
+    }
+    
+    .mil-bullet-list li:before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-size: 20px;
+      line-height: 1;
+    }
+    
+    .mil-notice {
+      background: rgba(255, 126, 95, 0.1);
+      border-left: 3px solid var(--primary);
+      padding: 10px 15px;
+      border-radius: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      animation: fadeIn 0.5s ease;
+    }
+    
+    .mil-close-notice {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: var(--primary);
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes fadeOut {
+      from { opacity: 1; }
+      to { opacity: 0; }
+    }
+    
+    /* Ensure all text has sufficient contrast */
+    body, .mil-card, .mil-card h4, .mil-card p, .mil-bullet-list li {
+      color: #333;
+    }
+    
+    .mil-card h4 {
+      color: #222; /* Slightly darker for headings */
+    }
+  </style>
+
+</head>
+
+<body>
+
+<!-- wrapper -->
+<div class="mil-wrapper" id="top">
+
+  <!-- cursor -->
+  <div class="mil-ball">
+            <span class="mil-icon-1">
+                <svg viewBox="0 0 128 128">
+                    <path d="M106.1,41.9c-1.2-1.2-3.1-1.2-4.2,0c-1.2,1.2-1.2,3.1,0,4.2L116.8,61H11.2l14.9-14.9c1.2-1.2,1.2-3.1,0-4.2	c-1.2-1.2-3.1-1.2-4.2,0l-20,20c-1.2,1.2-1.2,3.1,0,4.2l20,20c0.6,0.6,1.4,0.9,2.1,0.9s1.5-0.3,2.1-0.9c1.2-1.2,1.2-3.1,0-4.2	L11.2,67h105.5l-14.9,14.9c-1.2,1.2-1.2,3.1,0,4.2c0.6,0.6,1.4,0.9,2.1,0.9s1.5-0.3,2.1-0.9l20-20c1.2-1.2,1.2-3.1,0-4.2L106.1,41.9	z" />
+                </svg>
+            </span>
+    <div class="mil-more-text">More</div>
+    <div class="mil-choose-text">Сhoose</div>
+  </div>
+  <!-- cursor end -->
+
+  <!-- preloader -->
+  <div class="mil-preloader">
+    <div class="mil-preloader-animation">
+      <div class="mil-pos-abs mil-animation-1">
+        <p class="mil-h3 mil-muted mil-thin">Pioneering</p>
+        <p class="mil-h3 mil-muted">Creative</p>
+        <p class="mil-h3 mil-muted mil-thin">Excellence</p>
+      </div>
+      <div class="mil-pos-abs mil-animation-2">
+        <div class="mil-reveal-frame">
+          <p class="mil-reveal-box"></p>
+          <p class="mil-h3 mil-muted mil-thin">ashley.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- preloader end -->
+
+  <!-- scrollbar progress -->
+  <div class="mil-progress-track">
+    <div class="mil-progress"></div>
+  </div>
+  <!-- scrollbar progress end -->
+
+  <!-- menu -->
+  <div class="mil-menu-frame">
+    <!-- frame clone -->
+    <div class="mil-frame-top">
+      <a href="home-1.html" class="mil-logo">A.</a>
+      <div class="mil-menu-btn">
+        <span></span>
+      </div>
+    </div>
+    <!-- frame clone end -->
+    <div class="container">
+      <div class="mil-menu-content">
+        <div class="row">
+          <div class="col-xl-5">
+
+            <nav class="mil-main-menu" id="swupMenu">
+              <ul>
+                <li class="mil-has-children">
+                  <a href="#.">Homepage</a>
+                  <ul>
+                    <li><a href="home-1.html">Landing page</a></li>
+                    <li><a href="home-2.html">Personal</a></li>
+                    <li><a href="portfolio-3.html">Portfolio slider</a></li>
+                  </ul>
+                </li>
+                <li class="mil-has-children">
+                  <a href="#.">Portfolio</a>
+                  <ul>
+                    <li><a href="portfolio-1.html">Grid type 1</a></li>
+                    <li><a href="portfolio-2.html">Grid type 2</a></li>
+                    <li><a href="portfolio-3.html">Slider</a></li>
+                  </ul>
+                </li>
+                <li class="mil-has-children">
+                  <a href="#.">Services</a>
+                  <ul>
+                    <li><a href="services.html">Services List</a></li>
+                    <li><a href="service.html">Single service</a></li>
+                  </ul>
+                </li>
+                <li class="mil-has-children">
+                  <a href="#.">Newsletter</a>
+                  <ul>
+                    <li><a href="blog.html">Blog List</a></li>
+                    <li><a href="publication.html">Publication</a></li>
+                  </ul>
+                </li>
+                <li class="mil-has-children mil-active">
+                  <a href="#.">Other pages</a>
+                  <ul>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="404.html">404</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+
+          </div>
+          <div class="col-xl-7">
+
+            <div class="mil-menu-right-frame">
+              <div class="mil-animation-in">
+                <div class="mil-animation-frame">
+                  <div class="mil-animation mil-position-1 mil-scale" data-value-1="2" data-value-2="2"></div>
+                </div>
+              </div>
+              <div class="mil-menu-right">
+                <div class="row">
+                  <div class="col-lg-8 mil-mb-60">
+
+                    <h6 class="mil-muted mil-mb-30">Projects</h6>
+
+                    <ul class="mil-menu-list">
+                      <li><a href="project-1.html" class="mil-light-soft">Interior design studio</a></li>
+                      <li><a href="project-2.html" class="mil-light-soft">Home Security Camera</a></li>
+                      <li><a href="project-3.html" class="mil-light-soft">Kemia Honest Skincare</a></li>
+                      <li><a href="project-4.html" class="mil-light-soft">Cascade of Lava</a></li>
+                      <li><a href="project-5.html" class="mil-light-soft">Air Pro by Molekule</a></li>
+                      <li><a href="project-6.html" class="mil-light-soft">Tony's Chocolonely</a></li>
+                    </ul>
+
+                  </div>
+                  <div class="col-lg-4 mil-mb-60">
+
+                    <h6 class="mil-muted mil-mb-30">Useful links</h6>
+
+                    <ul class="mil-menu-list">
+                      <li><a href="#." class="mil-light-soft">Privacy Policy</a></li>
+                      <li><a href="#." class="mil-light-soft">Terms and conditions</a></li>
+                      <li><a href="#." class="mil-light-soft">Cookie Policy</a></li>
+                      <li><a href="#." class="mil-light-soft">Careers</a></li>
+                    </ul>
+
+                  </div>
+                </div>
+                <div class="mil-divider mil-mb-60"></div>
+                <div class="row justify-content-between">
+
+                  <div class="col-lg-4 mil-mb-60">
+
+                    <h6 class="mil-muted mil-mb-30">Canada</h6>
+
+                    <p class="mil-light-soft mil-up">71 South Los Carneros Road, California <span class="mil-no-wrap">+51 174 705 812</span></p>
+
+                  </div>
+                  <div class="col-lg-4 mil-mb-60">
+
+                    <h6 class="mil-muted mil-mb-30">Germany</h6>
+
+                    <p class="mil-light-soft mil-up">Leehove 40, 2678 MC De Lier, Netherlands <span class="mil-no-wrap">+31 174 705 811</span></p>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- menu -->
+
+  <!-- curtain -->
+  <div class="mil-curtain"></div>
+  <!-- curtain end -->
+
+  <!-- frame -->
+  <div class="mil-frame">
+    <div class="mil-frame-top">
+      <a href="home-1.html" class="mil-logo">A.</a>
+      <div class="mil-menu-btn">
+        <span></span>
+      </div>
+    </div>
+    <div class="mil-frame-bottom">
+      <div class="mil-current-page"></div>
+      <div class="mil-back-to-top">
+        <a href="#top" class="mil-link mil-dark mil-arrow-place">
+          <span>Back to top</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- frame end -->
+
+  <!-- content -->
+  <div class="mil-content">
+    <div id="swupMain" class="mil-main-transition">
+
+      <!-- banner -->
+      <div class="mil-inner-banner">
+        <div class="mil-banner-content mil-up">
+          <div class="mil-animation-frame">
+            <div class="mil-animation mil-position-4 mil-dark mil-scale" data-value-1="6" data-value-2="1.4"></div>
+          </div>
+          <div class="container">
+            <ul class="mil-breadcrumbs mil-mb-60">
+              <li><a href="home-1.html">Homepage</a></li>
+              <li><a href="portfolio-1.html">Portfolio</a></li>
+              <li><a href="project-7.html">Project</a></li>
+            </ul>
+            <h1 class="mil-mb-60">Transforming Data Chaos into Algorithmic Order</h1>
+            <p class="mil-text-lg mil-up mil-mb-60">A C# WinForms application that benchmarks custom data structures and sorting algorithms, turning theoretical computer science into tangible performance insights.</p>
+            <a href="#what-we-built" class="mil-link mil-dark mil-arrow-place mil-down-arrow">
+              <span>Discover the Architecture</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- banner end -->
+
+      <!-- project section -->
+      <section id="what-we-built">
+        <div class="container mil-p-120-120">
+          <div class="mil-info mil-up">
+            <div>Client: &nbsp;<span class="mil-dark">C# WinForms</span></div>
+            <div>Date: &nbsp;<span class="mil-dark">2023</span></div>
+            <div>Author: &nbsp;<span class="mil-dark">Rares</span></div>
+          </div>
+          <div class="row justify-content-center mil-center mil-p-120-0">
+            <div class="col-lg-8">
+              <h3 class="mil-up mil-mb-30">Project Overview</h3>
+              <p class="mil-text-lg mil-up mil-mb-60">In a world drowning in unstructured data, efficient algorithms are the lifeboats. This application doesn't just demonstrate data structures—it weaponizes them against inefficiency. Built with C# WinForms, it transforms complex algorithmic operations into visual, interactive experiences that reveal the true cost of computational choices.</p>
+            </div>
+          </div>
+
+          <!-- Core Features -->
+          <div class="row justify-content-center mil-center mil-p-120-0">
+            <div class="col-lg-8">
+              <h3 class="mil-up mil-mb-60"><i class="fas fa-shapes mil-text-blue"></i> Core Features</h3>
+              <p class="mil-up mil-mb-30">This application showcases the following key features:</p>
+
+              <!-- Feature 1 -->
+              <div class="mil-card mil-up mil-mb-60">
+                <h4 class="mil-mb-30">Custom Data Structures Engine</h4>
+                <p><span class="mil-bold">Description:</span> Beyond standard collections, we built a high-performance engine featuring handcrafted linked lists, dynamic arrays, and binary trees—each optimized for real-world data scenarios.</p>
+                <p><span class="mil-bold">Code Snippet:</span></p>
+                <pre class="mil-code-block" style="background: #1e1e1e; color: #d4d4d4;"><code class="language-csharp">public class MyLinkedList&lt;T&gt;
+{
+    private Node head;
+    private Node tail;
+    
+    public void Add(T data) 
+    {
+        Node newNode = new Node(data);
+        if (head == null) head = newNode;
+        else tail.Next = newNode;
+        tail = newNode;
+    }
+    
+    // Custom traversal and manipulation methods
+}</code></pre>
+              </div>
+
+              <!-- Feature 2 -->
+              <div class="mil-card mil-up mil-mb-60">
+                <h4 class="mil-mb-30">Algorithm Benchmarking Suite</h4>
+                <p><span class="mil-bold">Description:</span> We implemented 6 sorting algorithms with identical interfaces, enabling direct performance comparisons under controlled conditions with statistical significance.</p>
+                <div class="row mil-mt-30">
+                  <div class="col-12 mil-mb-20">
+                    <div id="mil-algo-notice" class="mil-notice">
+                      <span>Click any algorithm to view its implementation</span>
+                      <button class="mil-close-notice">×</button>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <ul class="mil-bullet-list">
+                      <li><a href="#" class="mil-algo-link" data-algo="bubble">Bubble Sort</a></li>
+                      <li><a href="#" class="mil-algo-link" data-algo="insertion">Insertion Sort</a></li>
+                      <li><a href="#" class="mil-algo-link" data-algo="selection">Selection Sort</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <ul class="mil-bullet-list">
+                      <li><a href="#" class="mil-algo-link" data-algo="quick">Quick Sort</a></li>
+                      <li><a href="#" class="mil-algo-link" data-algo="merge">Merge Sort</a></li>
+                      <li><a href="#" class="mil-algo-link" data-algo="heap">Heap Sort</a></li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <!-- Code Snippets Container -->
+                <div id="mil-algo-code-container">
+                  <!-- Bubble Sort -->
+                  <div class="mil-algo-code" id="bubble-code">
+                    <pre class="mil-code-block"><code class="language-csharp">public class BubbleSort : ISortable&lt;T&gt;
+{
+    public void Sort(MyLinkedList&lt;T&gt; list)
+    {
+        // Implementation of Bubble Sort
+        // ...
+    }
+
+    public string AlgorithmName => "Bubble Sort";
+}</code></pre>
+                  </div>
+                  
+                  <!-- Insertion Sort -->
+                  <div class="mil-algo-code" id="insertion-code" style="display:none;">
+                    <pre class="mil-code-block"><code class="language-csharp">public class InsertionSort : ISortable&lt;T&gt;
+{
+    public void Sort(MyLinkedList&lt;T&gt; list)
+    {
+        // Implementation of Insertion Sort
+        // ...
+    }
+
+    public string AlgorithmName => "Insertion Sort";
+}</code></pre>
+                  </div>
+                  
+                  <!-- Selection Sort -->
+                  <div class="mil-algo-code" id="selection-code" style="display:none;">
+                    <pre class="mil-code-block"><code class="language-csharp">public class SelectionSort : ISortable&lt;T&gt;
+{
+    public void Sort(MyLinkedList&lt;T&gt; list)
+    {
+        // Implementation of Selection Sort
+        // ...
+    }
+
+    public string AlgorithmName => "Selection Sort";
+}</code></pre>
+                  </div>
+                  
+                  <!-- Quick Sort -->
+                  <div class="mil-algo-code" id="quick-code" style="display:none;">
+                    <pre class="mil-code-block"><code class="language-csharp">public class QuickSort : ISortable&lt;T&gt;
+{
+    public void Sort(MyLinkedList&lt;T&gt; list)
+    {
+        // Implementation of Quick Sort
+        // ...
+    }
+
+    public string AlgorithmName => "Quick Sort";
+}</code></pre>
+                  </div>
+                  
+                  <!-- Merge Sort -->
+                  <div class="mil-algo-code" id="merge-code" style="display:none;">
+                    <pre class="mil-code-block"><code class="language-csharp">public class MergeSort : ISortable&lt;T&gt;
+{
+    public void Sort(MyLinkedList&lt;T&gt; list)
+    {
+        // Implementation of Merge Sort
+        // ...
+    }
+
+    public string AlgorithmName => "Merge Sort";
+}</code></pre>
+                  </div>
+                  
+                  <!-- Heap Sort -->
+                  <div class="mil-algo-code" id="heap-code" style="display:none;">
+                    <pre class="mil-code-block"><code class="language-csharp">public class HeapSort : ISortable&lt;T&gt;
+{
+    public void Sort(MyLinkedList&lt;T&gt; list)
+    {
+        // Implementation of Heap Sort
+        // ...
+    }
+
+    public string AlgorithmName => "Heap Sort";
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Feature 3 -->
+              <div class="mil-card mil-up mil-mb-60">
+                <h4 class="mil-mb-30">Real-Time Visualization</h4>
+                <p><span class="mil-bold">Description:</span> As algorithms execute, the application renders data movements in real-time, transforming abstract operations into visible patterns that reveal algorithmic behaviors.</p>
+                <div class="mil-algo-visualization">
+                  <div class="mil-bar" style="height: 30px; width: 10%; background: linear-gradient(90deg, #ff7e5f, #feb47b);"></div>
+                  <div class="mil-bar" style="height: 60px; width: 20%; background: linear-gradient(90deg, #ff7e5f, #feb47b);"></div>
+                  <!-- More bars for visualization -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dataset Details -->
+          <div class="row justify-content-center mil-center mil-p-120-0">
+            <div class="col-lg-8">
+              <h3 class="mil-up mil-mb-60"><i class="fas fa-database mil-text-blue"></i> Dataset in Focus</h3>
+              <div class="mil-card mil-up mil-mb-30">
+                <h4 class="mil-mb-20">3,000 Book Records</h4>
+                <p>A curated subset of the Open Library public dataset featuring ISBN-13, Title, Author, Publication Year, Genre, Publisher, and Page Count. Cleaned for consistent encoding and valid ISBNs, this dataset is large enough to expose algorithmic complexity yet small enough for sub-second demos on commodity laptops.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical Deep Dive -->
+          <div class="row justify-content-center mil-center mil-p-120-0">
+            <div class="col-lg-8">
+              <h3 class="mil-up mil-mb-60"><i class="fas fa-cogs mil-text-purple"></i> Technical Deep Dive</h3>
+              
+              <div class="mil-card mil-up mil-mb-30">
+                <h4 class="mil-mb-20">System Architecture</h4>
+                <p>The application follows a robust layered architecture that cleanly separates concerns between the user interface, business logic, and performance measurement components.</p>
+              </div>
+              
+              <div class="mil-card mil-up mil-mb-30">
+                <h4 class="mil-mb-20">Performance Metrics</h4>
+                <p>Our benchmarking methodology employs rigorous statistical analysis to measure algorithmic efficiency across multiple dimensions. We capture execution time with microsecond precision, track memory allocation patterns, and analyze garbage collection impact to provide comprehensive performance profiles.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Algorithm Showdown -->
+          <div class="row justify-content-center mil-center mil-p-120-0">
+            <div class="col-lg-8">
+              <h3 class="mil-up mil-mb-60"><i class="fas fa-tachometer-alt mil-text-orange"></i> Algorithm Showdown</h3>
+              <p class="mil-up mil-mb-30">We pitted six sorting algorithms against identical datasets. Here's what we discovered:</p>
+              
+              <div class="mil-algo-showcase mil-up mil-mb-60">
+                <div class="mil-algo-card">
+                  <h5>QuickSort</h5>
+                  <div class="mil-stats">
+                    <span class="mil-win">Winner: Small Datasets</span>
+                    <span>Avg: 0.4ms (10k elements)</span>
+                  </div>
+                </div>
+                <div class="mil-algo-card">
+                  <h5>MergeSort</h5>
+                  <div class="mil-stats">
+                    <span class="mil-win">Winner: Large Datasets</span>
+                    <span>Avg: 1.2ms (100k elements)</span>
+                  </div>
+                </div>
+                <!-- More algorithm cards -->
+              </div>
+              
+              <div class="mil-card mil-up mil-mb-60">
+                <h4 class="mil-mb-30">Big-O Complexity Cheatsheet</h4>
+                <div class="mil-table-responsive">
+                  <table class="mil-table mil-table-bordered" style="border-collapse: separate; border-spacing: 0 10px;">
+                    <thead>
+                      <tr>
+                        <th style="padding: 15px;">Algorithm</th>
+                        <th style="padding: 15px;">Best Time</th>
+                        <th style="padding: 15px;">Average</th>
+                        <th style="padding: 15px;">Worst</th>
+                        <th style="padding: 15px;">Space</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style="padding: 15px;">Bubble Sort</td>
+                        <td style="padding: 15px;">O(n)</td>
+                        <td style="padding: 15px;">O(n²)</td>
+                        <td style="padding: 15px;">O(n²)</td>
+                        <td style="padding: 15px;">O(1)</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 15px;">Insertion Sort</td>
+                        <td style="padding: 15px;">O(n)</td>
+                        <td style="padding: 15px;">O(n²)</td>
+                        <td style="padding: 15px;">O(n²)</td>
+                        <td style="padding: 15px;">O(1)</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 15px;">Quick Sort</td>
+                        <td style="padding: 15px;">O(n log n)</td>
+                        <td style="padding: 15px;">O(n log n)</td>
+                        <td style="padding: 15px;">O(n²)</td>
+                        <td style="padding: 15px;">O(log n)</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 15px;">Merge Sort</td>
+                        <td style="padding: 15px;">O(n log n)</td>
+                        <td style="padding: 15px;">O(n log n)</td>
+                        <td style="padding: 15px;">O(n log n)</td>
+                        <td style="padding: 15px;">O(n)</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 15px;">Linear Search</td>
+                        <td style="padding: 15px;">O(1)</td>
+                        <td style="padding: 15px;">O(n)</td>
+                        <td style="padding: 15px;">O(n)</td>
+                        <td style="padding: 15px;">O(1)</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 15px;">Binary Search</td>
+                        <td style="padding: 15px;">O(1)</td>
+                        <td style="padding: 15px;">O(log n)</td>
+                        <td style="padding: 15px;">O(log n)</td>
+                        <td style="padding: 15px;">O(1)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <!-- project section end -->
+
+      <!-- call to action -->
+      <section class="mil-soft-bg">
+        <div class="container mil-p-120-120">
+          <div class="row">
+            <div class="col-lg-10">
+              <span class="mil-suptitle mil-suptitle-right mil-suptitle-dark mil-up">Looking to make your mark? We'll help you turn <br> your project into a success story.</span>
+            </div>
+          </div>
+          <div class="mil-center">
+            <h2 class="mil-up mil-mb-60">Ready to bring your <span class="mil-thin">ideas to</span> life? <br> We're <span class="mil-thin">here to help</span></h2>
+            <div class="mil-up"><a href="contact.html" class="mil-button mil-arrow-place"><span>Contact us</span></a></div>
+          </div>
+        </div>
+      </section>
+      <!-- call to action end -->
+
+      <!-- footer -->
+      <footer class="mil-dark-bg">
+        <div class="mi-invert-fix">
+          <div class="container mil-p-120-60">
+            <div class="row justify-content-between">
+              <div class="col-md-4 col-lg-4 mil-mb-60">
+
+                <div class="mil-muted mil-logo mil-up mil-mb-30">Ashley.</div>
+
+                <p class="mil-light-soft mil-up mil-mb-30">Subscribe our newsletter:</p>
+
+                <form class="mil-subscribe-form mil-up">
+                  <input type="text" placeholder="Enter our email">
+                  <button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"></button>
+                </form>
+
+              </div>
+              <div class="col-md-7 col-lg-6">
+                <div class="row justify-content-end">
+                  <div class="col-md-6 col-lg-7">
+
+                    <nav class="mil-footer-menu mil-mb-60">
+                      <ul>
+                        <li class="mil-up mil-active">
+                          <a href="home-1.html">Home</a>
+                        </li>
+                        <li class="mil-up">
+                          <a href="portfolio-1.html">Portfolio</a>
+                        </li>
+                        <li class="mil-up">
+                          <a href="services.html">Services</a>
+                        </li>
+                        <li class="mil-up">
+                          <a href="contact.html">Contact</a>
+                        </li>
+                        <li class="mil-up">
+                          <a href="blog.html">Blog</a>
+                        </li>
+                      </ul>
+                    </nav>
+
+                  </div>
+                  <div class="col-md-6 col-lg-5">
+
+                    <ul class="mil-menu-list mil-up mil-mb-60">
+                      <li><a href="#." class="mil-light-soft">Privacy Policy</a></li>
+                      <li><a href="#." class="mil-light-soft">Terms and conditions</a></li>
+                      <li><a href="#." class="mil-light-soft">Cookie Policy</a></li>
+                      <li><a href="#." class="mil-light-soft">Careers</a></li>
+                    </ul>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row justify-content-between flex-sm-row-reverse">
+              <div class="col-md-7 col-lg-6">
+
+                <div class="row justify-content-between">
+
+                  <div class="col-md-6 col-lg-5 mil-mb-60">
+
+                    <h6 class="mil-muted mil-up mil-mb-30">Canada</h6>
+
+                    <p class="mil-light-soft mil-up">71 South Los Carneros Road, California <span class="mil-no-wrap">+51 174 705 812</span></p>
+
+                  </div>
+                  <div class="col-md-6 col-lg-5 mil-mb-60">
+
+                    <h6 class="mil-muted mil-up mil-mb-30">Germany</h6>
+
+                    <p class="mil-light-soft mil-up">Leehove 40, 2678 MC De Lier, Netherlands <span class="mil-no-wrap">+31 174 705 811</span></p>
+
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-md-4 col-lg-6 mil-mb-60">
+
+                <div class="mil-vert-between">
+                  <div class="mil-mb-30">
+                    <ul class="mil-social-icons mil-up">
+                      <li><a href="#." target="_blank" class="social-icon"> <i class="far fa-circle"></i></a></li>
+                      <li><a href="#." target="_blank" class="social-icon"> <i class="far fa-circle"></i></a></li>
+                      <li><a href="#." target="_blank" class="social-icon"> <i class="far fa-circle"></i></a></li>
+                      <li><a href="#." target="_blank" class="social-icon"> <i class="far fa-circle"></i></a></li>
+                    </ul>
+                  </div>
+                  <p class="mil-light-soft mil-up"> 2023 - Mil. All Rights Reserved.</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- footer end -->
+
+      <!-- hidden elements -->
+      <div class="mil-hidden-elements">
+        <div class="mil-dodecahedron">
+          <div class="mil-pentagon">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="mil-pentagon">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="mil-pentagon">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="mil-pentagon">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="mil-pentagon">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="mil-pentagon">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="mil-pentagon">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="mil-arrow">
+          <path d="M 14 5.3417969 C 13.744125 5.3417969 13.487969 5.4412187 13.292969 5.6367188 L 13.207031 5.7226562 C 12.816031 6.1136563 12.816031 6.7467188 13.207031 7.1367188 L 17.070312 11 L 4 11 C 3.448 11 3 11.448 3 12 C 3 12.552 3.448 13 4 13 L 17.070312 13 L 13.207031 16.863281 C 12.816031 17.254281 12.816031 17.887344 13.207031 18.277344 L 13.292969 18.363281 C 13.683969 18.754281 14.317031 18.754281 14.707031 18.363281 L 20.363281 12.707031 C 20.754281 12.316031 20.754281 11.682969 20.363281 11.292969 L 14.707031 5.6367188 C 14.511531 5.4412187 14.255875 5.3417969 14 5.3417969 z" />
+        </svg>
+
+        <svg width="250" viewBox="0 0 300 1404" fill="none" xmlns="http://www.w3.org/2000/svg" class="mil-lines">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M1 892L1 941H299V892C299 809.71 232.29 743 150 743C67.7096 743 1 809.71 1 892ZM0 942H300V892C300 809.157 232.843 742 150 742C67.1573 742 0 809.157 0 892L0 942Z" class="mil-move" />
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M299 146V97L1 97V146C1 228.29 67.7096 295 150 295C232.29 295 299 228.29 299 146ZM300 96L0 96V146C0 228.843 67.1573 296 150 296C232.843 296 300 228.843 300 146V96Z" class="mil-move" />
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M299 1H1V1403H299V1ZM0 0V1404H300V0H0Z" />
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M150 -4.37115e-08L150 1404L149 1404L149 0L150 -4.37115e-08Z" />
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M150 1324C232.29 1324 299 1257.29 299 1175C299 1092.71 232.29 1026 150 1026C67.7096 1026 1 1092.71 1 1175C1 1257.29 67.7096 1324 150 1324ZM150 1325C232.843 1325 300 1257.84 300 1175C300 1092.16 232.843 1025 150 1025C67.1573 1025 0 1092.16 0 1175C0 1257.84 67.1573 1325 150 1325Z" class="mil-move" />
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M300 1175H0V1174H300V1175Z" class="mil-move" />
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M150 678C232.29 678 299 611.29 299 529C299 446.71 232.29 380 150 380C67.7096 380 1 446.71 1 529C1 611.29 67.7096 678 150 678ZM150 679C232.843 679 300 611.843 300 529C300 446.157 232.843 379 150 379C67.1573 379 0 446.157 0 529C0 611.843 67.1573 679 150 679Z" class="mil-move" />
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M299 380H1V678H299V380ZM0 379V679H300V379H0Z" class="mil-move" />
+        </svg>
+      </div>
+      <!-- hidden elements end -->
+
+    </div>
+  </div>
+  <!-- content -->
+</div>
+<!-- wrapper end -->
+
+<!-- jQuery js -->
+<script src="js/plugins/jquery.min.js"></script>
+<!-- swup js -->
+<script src="js/plugins/swup.min.js"></script>
+<!-- swiper js -->
+<script src="js/plugins/swiper.min.js"></script>
+<!-- fancybox js -->
+<script src="js/plugins/fancybox.min.js"></script>
+<!-- gsap js -->
+<script src="js/plugins/gsap.min.js"></script>
+<!-- scroll smoother -->
+<script src="js/plugins/smooth-scroll.js"></script>
+<!-- scroll trigger js -->
+<script src="js/plugins/ScrollTrigger.min.js"></script>
+<!-- scroll to js -->
+<script src="js/plugins/ScrollTo.min.js"></script>
+<!-- ashley js -->
+<script src="js/main.js"></script>
+
+<script>
+  // Algorithm selection
+  document.querySelectorAll('.mil-algo-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const algo = this.getAttribute('data-algo');
+      
+      // Hide all code snippets
+      document.querySelectorAll('.mil-algo-code').forEach(code => {
+        code.style.display = 'none';
+      });
+      
+      // Show the selected code snippet
+      const selectedCode = document.getElementById(`${algo}-code`);
+      if (selectedCode) {
+        selectedCode.style.display = 'block';
+      }
+    });
+  });
+</script>
+
+<script>
+  // Show notice on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    const notice = document.getElementById('mil-algo-notice');
+    if (notice) {
+      // Show for 5 seconds then fade out
+      setTimeout(() => {
+        notice.style.animation = 'fadeOut 0.5s ease';
+        setTimeout(() => {
+          notice.style.display = 'none';
+        }, 500);
+      }, 5000);
+      
+      // Close button
+      document.querySelector('.mil-close-notice').addEventListener('click', function() {
+        notice.style.animation = 'fadeOut 0.5s ease';
+        setTimeout(() => {
+          notice.style.display = 'none';
+        }, 500);
+      });
+    }
+  });
+</script>
+
+</body>
+
+</html>
