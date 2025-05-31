@@ -20,6 +20,181 @@
     <!-- page name -->
     <title>Zyphyr Cloud Technologies</title>
 
+    <style>
+        /* Add custom styling for highlights */
+        .mil-highlight {
+            background: linear-gradient(120deg, rgba(255,152,0,0.15), rgba(255,152,0,0.05));
+            padding: 0 4px;
+            border-radius: 4px;
+            border-left: 2px solid #FF9800;
+        }
+        .mil-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(255,152,0,0.3), transparent);
+            margin: 40px 0;
+        }
+        
+        /* New styling enhancements */
+        .mil-ai-glow {
+            text-shadow: 0 0 8px rgba(255,152,0,0.4);
+            transition: all 0.3s ease;
+        }
+        .mil-promo-highlight {
+            background: linear-gradient(120deg, rgba(41,121,255,0.15), rgba(41,121,255,0.05));
+            padding: 2px 6px;
+            border-radius: 4px;
+            border-left: 3px solid #2979FF;
+            display: inline-block;
+        }
+        .mil-section-header {
+            position: relative;
+            padding-left: 20px;
+        }
+        .mil-section-header:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 80%;
+            width: 4px;
+            background: linear-gradient(to bottom, #FF9800, #FF5722);
+            border-radius: 2px;
+        }
+        .mil-ai-pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+    </style>
+
+    <style>
+        /* Timeline styling */
+        .mil-timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin: 60px 0;
+        }
+        .mil-timeline:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, #FF9800, #FF5722);
+            z-index: 1;
+        }
+        .mil-timeline-item {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            flex: 1;
+        }
+        .mil-timeline-flag {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            border: 2px solid #FF9800;
+            transition: all 0.3s ease;
+        }
+        .mil-timeline-flag:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255,152,0,0.2);
+        }
+        .mil-timeline-flag img {
+            width: 50px;
+            height: 35px;
+            object-fit: cover;
+        }
+        .mil-timeline-arrow {
+            position: absolute;
+            top: 40px;
+            right: -30px;
+            color: #FF9800;
+            font-size: 24px;
+        }
+        .mil-country-card {
+            background: rgba(255,255,255,0.85);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-left: 4px solid #FF9800;
+        }
+        .mil-country-card h3 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .mil-country-card h3 img {
+            width: 40px;
+            margin-right: 15px;
+        }
+    </style>
+
+    <style>
+        /* Reviews carousel styling */
+        .mil-reviews-container {
+            overflow: hidden;
+            position: relative;
+            margin: 60px 0;
+        }
+        .mil-reviews-track {
+            display: flex;
+            animation: scroll 30s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .mil-review-card {
+            min-width: 350px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 16px;
+            padding: 30px;
+            margin: 0 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-left: 4px solid #FF9800;
+        }
+        .mil-review-content {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .mil-review-content:before,
+        .mil-review-content:after {
+            content: '\201C';
+            font-size: 60px;
+            position: absolute;
+            color: rgba(255,152,0,0.1);
+        }
+        .mil-review-content:before {
+            top: -20px;
+            left: -15px;
+        }
+        .mil-review-content:after {
+            content: '\201D';
+            bottom: -50px;
+            right: -15px;
+        }
+        .mil-review-rating {
+            color: #FF9800;
+            font-size: 18px;
+            margin-top: 5px;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -88,39 +263,16 @@
                                     </ul>
                                 </li>
                                 <li class="mil-has-children">
-                                    <a href="#.">Innovative Portfolio</a>
-                                    <ul>
-                                        <li><a href="portfolio-1.html">Project Showcase</a></li>
-                                        <li><a href="portfolio-2.html">Virtual Repository</a></li>
-                                    </ul>
+                                    <a href="portfolio-1.html">Innovative Portfolio</a>
                                 </li>
                                 <li class="mil-has-children">
-                                    <a href="#.">Interactive Lab</a>
-                                    <ul>
-                                        <li><a href="lab.html">Code Playground</a></li>
-                                        <li><a href="minigames.html">Mini-Games</a></li>
-                                    </ul>
+                                    <a href="interactive-lab.html">Interactive Lab</a>
                                 </li>
                                 <li class="mil-has-children">
-                                    <a href="#.">Under the Hood</a>
-                                    <ul>
-                                        <li><a href="code-insights.html">Source Insights</a></li>
-                                        <li><a href="terminal.html">The Terminal</a></li>
-                                    </ul>
+                                    <a href="home-1-under-the-hood.html">Under the Hood</a>
                                 </li>
                                 <li class="mil-has-children">
-                                    <a href="#.">Architecture &amp; Systems</a>
-                                    <ul>
-                                        <li><a href="architecture.html">Tech Stack</a></li>
-                                        <li><a href="systems.html">System Blueprints</a></li>
-                                    </ul>
-                                </li>
-                                <li class="mil-has-children">
-                                    <a href="#.">Connect &amp; Collaborate</a>
-                                    <ul>
-                                        <li><a href="contact.html">Contact</a></li>
-                                        <li><a href="blog.html">Publications</a></li>
-                                    </ul>
+                                    <a href="contact.html">Connect &amp; Collaborate</a>
                                 </li>
                             </ul>
                         </nav>
@@ -144,7 +296,12 @@
 
                                         <ul class="mil-menu-list">
                                             <li><a href="project-1.html" class="mil-light-soft">MINA Autonomous Data Driven Robot</a></li>
-                                            <li><a href="project-2.html" class="mil-light-soft">--------</a></li>
+                                            <li><a href="project-2.html" class="mil-light-soft">8 Ball Snooker JavaScript Game</a></li>
+                                            <li><a href="project-2.html" class="mil-light-soft">Accounting Application System RESTful API</a></li>
+                                            <li><a href="project-2.html" class="mil-light-soft">Advanced .NET MAUI Threading Techniques</a></li>
+                                            <li><a href="project-2.html" class="mil-light-soft">Java Design Patterns in Action</a></li>
+                                            <li><a href="project-2.html" class="mil-light-soft">BigShopper: Bol.com Price-Scraper</a></li>
+                                            <li><a href="project-2.html" class="mil-light-soft">C# WinForms Algorithmic Order</a></li>
                                         </ul>
 
                                     </div>
@@ -153,10 +310,9 @@
                                         <h6 class="mil-muted mil-mb-30">Useful links</h6>
 
                                         <ul class="mil-menu-list">
-                                            <li><a href="#." class="mil-light-soft">Privacy Policy</a></li>
-                                            <li><a href="#." class="mil-light-soft">Terms and conditions</a></li>
-                                            <li><a href="#." class="mil-light-soft">Cookie Policy</a></li>
-                                            <li><a href="#." class="mil-light-soft">Careers</a></li>
+                                            <li><a href="privacy-policy.html" class="mil-light-soft">Privacy Policy</a></li>
+                                            <li><a href="terms-and-conditions.html" class="mil-light-soft">Terms and conditions</a></li>
+                                            <li><a href="cookie-policy.html" class="mil-light-soft">Cookie Policy</a></li>
                                         </ul>
 
                                     </div>
@@ -166,20 +322,12 @@
 
                                     <div class="col-lg-4 mil-mb-60">
 
-                                        <h6 class="mil-muted mil-mb-30">Canada</h6>
+                                        <h6 class="mil-muted mil-mb-30">Netherlands</h6>
 
-                                        <p class="mil-light-soft mil-up">71 South Los Carneros Road, California <span
-                                                class="mil-no-wrap">+51 174 705 812</span></p>
-
-                                    </div>
-                                    <div class="col-lg-4 mil-mb-60">
-
-                                        <h6 class="mil-muted mil-mb-30">Germany</h6>
-
-                                        <p class="mil-light-soft">Leehove 40, 2678 MC De Lier, Netherlands <span
-                                                class="mil-no-wrap">+31 174 705 811</span></p>
+                                        <p class="mil-light-soft mil-up">Arve 104, Emmen </p>
 
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -198,7 +346,7 @@
     <!-- frame -->
     <div class="mil-frame">
         <div class="mil-frame-top">
-            <a href="home-1.html" class="mil-logo">Z.</a>
+            <a href="home-1.html" class="mil-logo" style="font-size: 40px;">Z.</a>
             <div class="mil-menu-btn">
                 <span></span>
             </div>
@@ -280,71 +428,75 @@
             <!-- banner end -->
 
             <!-- about -->
-            <section id="about">
-                <div class="container mil-p-120-30">
-                    <div class="row justify-content-between align-items-center">
-                        <div class="col-lg-6 col-xl-5">
+            <section id="about" class="mil-p-120-90">
+                <div class="mil-deco" style="top: 0; right: 25%;"></div>
+                <div class="container">
+                    <div class="row align-items-center mil-mb-90">
+                        <div class="col-lg-5 mil-up">
+                            <h2 class="mil-up mil-mb-30">My Global Journey</h2>
+                            <p class="mil-up mil-mb-30">From Romania to USA, my journey through four countries has shaped my unique perspective on AI and technology.</p>
 
-                            <div class="mil-mb-90">
-                                <h2 class="mil-up mil-mb-60">
-                                    Enter the <br>
-                                    Digital <span class="mil-thin">Frontier</span>
-                                </h2>
-                                <p class="mil-up mil-mb-30">
-                                    Step into our realm where smart engineering meets creative brilliance. Together, we
-                                    transform bold visions into real-world impact.
-
-                                </p>
-
-                                <div>
-                                    <p class="mil-up mil-mb-60">
-                                        At Zyphyr Cloud Technologies,
-                                        <span>
-    <span>every pixel</span>
-
-  </span>
-                                        is engineered with purpose—
-                                        <span>
-    <span>every line of code an invitation to explore.</span>
-  </span>
-                                        I merge
-                                        <span>
-    <span>cutting‑edge algorithms</span>
-  </span>
-                                        with
-                                        <span>
-    <span>bold, human‑centered design</span>
-  </span>
-                                        to craft digital experiences that surprise and inspire. From real‑time visuals
-                                        that react like living art to seamless systems that anticipate your next move, I
-                                        don’t just build software—I sculpt new realms of possibility.
-                                        <span>
-    <span>Step inside and
-                                        discover how one vision can shape the future of interaction</span>
-  </span>.
-                                    </p>
-
+                            <!-- Timeline -->
+                            <div class="mil-timeline mil-up">
+                                <div class="mil-timeline-item">
+                                    <div class="mil-timeline-flag">
+                                        <img src="img/flags/romania.svg" alt="Romania">
+                                    </div>
+                                    <h4>Romania</h4>
+                                    <div class="mil-timeline-arrow">→</div>
                                 </div>
-
-                                <div class="mil-about-quote">
-
-                                    <h6 class="mil-quote mil-up">
-                                        Pioneering a digital revolution by <span class="mil-thin">sculpting ideas</span>
-                                        into <span class="mil-thin">innovative experiences</span>
-                                    </h6></div>
+                                <div class="mil-timeline-item">
+                                    <div class="mil-timeline-flag">
+                                        <img src="img/flags/italy.svg" alt="Italy">
+                                    </div>
+                                    <h4>Italy</h4>
+                                    <div class="mil-timeline-arrow">→</div>
+                                </div>
+                                <div class="mil-timeline-item">
+                                    <div class="mil-timeline-flag">
+                                        <img src="img/flags/netherlands.svg" alt="Netherlands">
+                                    </div>
+                                    <h4>Netherlands</h4>
+                                    <div class="mil-timeline-arrow">→</div>
+                                </div>
+                                <div class="mil-timeline-item">
+                                    <div class="mil-timeline-flag">
+                                        <img src="img/flags/usa.svg" alt="USA">
+                                    </div>
+                                    <h4>USA</h4>
+                                </div>
                             </div>
-
                         </div>
-                        <div class="col-lg-5">
-
-                            <div class="mil-about-photo mil-mb-90">
-                                <div class="mil-lines-place"></div>
-                                <div class="mil-up mil-img-frame" style="padding-bottom: 160%;">
-                                    <img src="img/photo/Zyphyr.png" alt="img" class="mil-scale" data-value-1="1"
-                                         data-value-2="1.2">
-                                </div>
+                        <div class="col-lg-7 mil-up">
+                            <!-- Country Cards -->
+                            <div class="mil-country-card">
+                                <h3><img src="img/flags/romania.svg" alt="Romania"> Roots in Romania</h3>
+                                <p>Born in Iași, I spent most of my childhood glued to video games, forever poking at their edges to discover shortcuts, cheats, and glitches. That restless urge to see what makes a system tick—and how it can be bent—eventually steered me toward technology and, later on, AI.
+                                </p>
                             </div>
 
+                            <div class="mil-country-card">
+                                <h3><img src="img/flags/italy.svg" alt="Italy"> Education in Italy</h3>
+                                <p>Moved to Milan where I completed my IT high school diploma while earning certifications in network security and cloud computing. This period honed my technical skills and ignited my AI passion.</p>
+                            </div>
+
+                            <div class="mil-country-card">
+                                <h3><img src="img/flags/netherlands.svg" alt="Netherlands"> Innovation in Netherlands</h3>
+                                <p>At NHL Stenden University of Technology, I researched and implemented neural network optimization techniques. Collaborated on EU-funded AI projects focusing on natural language processing and more less-AI projects.</p>
+                            </div>
+
+                            <div class="mil-country-card">
+                                <h3><img src="img/flags/usa.svg" alt="USA"> Breakthrough in USA</h3>
+                                <p>Currently working remotely in the states, my work focuses on making advanced AI accessible while ensuring ethical and safe implementation.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="mil-up mil-mb-30">Philosophy & Approach</h2>
+                            <p class="mil-up">My multicultural journey taught me that truly transformative AI must balance technical excellence with human-centered design. I believe the most powerful solutions emerge when diverse global perspectives converge around challenging problems.</p>
+                            <p class="mil-up">Today, I bring this holistic approach to every project, ensuring our AI solutions are not just technically sound but culturally aware and ethically grounded.</p>
                         </div>
                     </div>
                 </div>
@@ -435,139 +587,466 @@
             </section>
             <!-- services end -->
 
-            <!-- team -->
-            <section>
-                <div class="container mil-p-120-30">
-                    <div class="row justify-content-between align-items-center">
-                        <div class="col-lg-5 col-xl-4">
-
-                            <div class="mil-mb-90">
-                                <h2 class="mil-up mil-mb-60">Meet <br>The Visionary</h2>
-                                <p class="mil-up mil-mb-30">
-                                    Principal architect behind enterprise-grade systems, combining algorithmic rigor
-                                    with scalable solutions that power digital transformation. </p>
-                                <p class="mil-up mil-mb-60">
-                                    An IT graduate delivering AI innovation for two remote U.S. companies, I unite
-                                    reinforcement learning and LLM logic in the cloud—my relentless passion crafts
-                                    digital experiences that captivate and convert visionary sketches into tangible
-                                    feats. </p>
-
-                                <div class="mil-up"><a href="team.html"
-                                                       class="mil-button mil-arrow-place mil-mb-60"><span>Read more</span></a>
-                                </div>
-
-                                <h4 class="mil-up"><span class="mil-thin">We</span> delivering <br><span
-                                        class="mil-thin">exceptional</span> results.</h4>
+            <!-- AI Collaboration -->
+            <section class="mil-p-120-30" id="aiSection">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-7">
+                            <h2 class="mil-section-header">Pushing AI <span class="mil-accent mil-ai-glow">Boundaries</span></h2>
+                            
+                            <div class="mil-highlight mil-up mil-mb-30">
+                                <p>I partner with the teams behind today's flagship AI assistants—including 
+                                    <span class="mil-accent mil-ai-pulse">OpenAI's ChatGPT</span>, 
+                                    <span class="mil-accent mil-ai-pulse">xAI's Grok</span>, 
+                                    <span class="mil-accent mil-ai-pulse">Anthropic's Claude</span>, 
+                                    <span class="mil-accent mil-ai-pulse">Astral</span>, 
+                                    <span class="mil-accent mil-ai-pulse">Google DeepMind's Gemini</span>—to push every new release closer to <span class="mil-accent">human-level performance</span>.</p>
                             </div>
+                            
+                            <h3 class="mil-section-header mil-up mil-mb-20">Remote Team Orchestration</h3>
+                            <p class="mil-up mil-mb-30">Operating 100% remotely, I coordinate large, globally distributed annotation and research squads through a blend of asynchronous workflows and live <span class="mil-accent">"war-room" Google-Meet sessions</span>.</p>
+                            
+                            <h4 class="mil-up mil-mb-15">Core Responsibilities:</h4>
+                            <ul class="mil-up mil-mb-30">
+                                <li><span class="mil-accent">Designing & iterating evaluation frameworks</span> that expose blind spots in reasoning, safety, and factuality</li>
+                                <li><span class="mil-accent">Translating bleeding-edge research</span> into production guidelines</li>
+                                <li><span class="mil-accent">Coaching reviewers and auditing output</span> to refine training data</li>
+                                <li><span class="mil-accent">Partnering with engineering leads</span> to triage urgent issues</li>
+                            </ul>
+                            
+                            <div class="mil-divider"></div>
+                            
+                            <h3 class="mil-section-header mil-up mil-mb-20">Career Evolution</h3>
+                            <div class="mil-highlight mil-up mil-mb-30">
+                                <p>I've progressed from <span class="mil-promo-highlight">Attempter</span> to <span class="mil-promo-highlight">Reviewer</span>—now on the front line of quality control for models used by millions daily.</p>
+                            </div>
+                            
+                            <h4 class="mil-up mil-mb-15">Gatekeeper Role:</h4>
+                            <p class="mil-up mil-mb-30">As a Reviewer, I help safeguard releases of 
+                                <span class="mil-accent">ChatGPT</span>, 
+                                <span class="mil-accent">Grok</span>, 
+                                <span class="mil-accent">Claude</span>, 
+                                <span class="mil-accent">Astral</span>, and 
+                                <span class="mil-accent">Gemini</span>.</p>
+                            
+                            <h4 class="mil-up mil-mb-15">Elevated Responsibilities:</h4>
+                            <ul class="mil-up mil-mb-30">
+                                <li>Designing stress-tests for model resilience</li>
+                                <li>Leading critical "war-room" diagnostics</li>
+                                <li>Approving fixes before deployment</li>
+                            </ul>
+                            
+                            <div class="mil-highlight-2 mil-up mil-mb-30">
+                                <p>The promotion recognizes past contributions—like boosting robustness scores <span class="mil-accent">double-digits release over release</span>—and empowers me to mentor new team members.</p>
+                            </div>
+                            
+                            <p class="mil-up">It's a bigger stage, tighter deadlines, and deeper influence—driving me to ensure these flagship models remain accurate, safe, and genuinely helpful.</p>
                         </div>
-                        <div class="col-lg-6">
-
-                            <div class="mil-team-list">
-                                <div class="mil-lines-place"></div>
-
-                                <div class="row mil-mb-60">
-                                    <div class="col-sm-6">
-
-                                        <div class="mil-team-card mil-up mil-mb-30">
-                                            <img src="img/flags/RO.png" alt="Team member">
-                                            <div class="mil-description">
-                                                <div class="mil-secrc-text">
-                                                    <h5 class="mil-muted mil-mb-5"><a href="home-2.html">Where I was
-                                                        born</a></h5>
-                                                    <p class="mil-link mil-light-soft mil-mb-10">Romania</p>
-                                                    <ul class="mil-social-icons mil-center">
-                                                        <li><a href="#." target="_blank" class="social-icon"> <i
-                                                                class="fab fa-behance"></i></a></li>
-                                                        <li><a href="#." target="_blank" class="social-icon"> <i
-                                                                class="fab fa-dribbble"></i></a></li>
-                                                        <li><a href="#." target="_blank" class="social-icon"> <i
-                                                                class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="#." target="_blank" class="social-icon"> <i
-                                                                class="fab fa-github"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="mil-team-card mil-up mil-mb-30">
-                                            <img src="img/flags/ITA.png" alt="Team member">
-                                            <div class="mil-description">
-                                                <div class="mil-secrc-text">
-                                                    <h5 class="mil-muted mil-mb-5"><a href="home-2.html">Where I grew
-                                                        roots</a></h5>
-                                                    <p class="mil-link mil-light-soft mil-mb-10">Italia</p>
-                                                    <ul class="mil-social-icons mil-center">
-                                                        <li><a href="#." target="_blank" class="social-icon"> <i
-                                                                class="fab fa-behance"></i></a></li>
-                                                        <li><a href="#." target="_blank" class="social-icon"> <i
-                                                                class="fab fa-dribbble"></i></a></li>
-                                                        <li><a href="#." target="_blank" class="social-icon"> <i
-                                                                class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="#." target="_blank" class="social-icon"> <i
-                                                                class="fab fa-github"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="col-sm-6">
-
-                                        <p class="mil-mobile-hidden mil-text-sm mil-mb-30" style="height: 30px;"></p>
-
-                                        <div class="mil-team-card mil-up mil-mb-30">
-                                            <img src="img/flags/NL.png" alt="Team member">
-                                            <div class="mil-description">
-                                                <div class="mil-secrc-text">
-                                                    <h5 class="mil-muted mil-mb-5"><a href="home-2.html">Where I took
-                                                        flight</a></h5>
-                                                    <p class="mil-link mil-light-soft mil-mb-10">Niederlande</p>
-                                                    <ul class="mil-social-icons mil-center">
-                                                        <li><a href="#." target="_blank" class="social-icon"> <i
-                                                                class="fab fa-behance"></i></a></li>
-                                                        <li><a href="#." target="_blank" class="social-icon"> <i
-                                                                class="fab fa-dribbble"></i></a></li>
-                                                        <li><a href="#." target="_blank" class="social-icon"> <i
-                                                                class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="#." target="_blank" class="social-icon"> <i
-                                                                class="fab fa-github"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="mil-team-card mil-up mil-mb-30">
-                                            <img src="img/flags/USA.png" alt="Team member">
-                                            <div class="mil-description">
-                                                <div class="mil-secrc-text">
-                                                    <h5 class="mil-muted mil-mb-5"><a href="home-2.html">Where I
-                                                        build</a></h5>
-                                                    <p class="mil-link mil-light-soft mil-mb-10">USA</p>
-                                                    <ul class="mil-social-icons mil-center">
-                                                        <li><a href="#." target="_blank" class="social-icon"> <i
-                                                                class="fab fa-behance"></i></a></li>
-                                                        <li><a href="#." target="_blank" class="social-icon"> <i
-                                                                class="fab fa-dribbble"></i></a></li>
-                                                        <li><a href="#." target="_blank" class="social-icon"> <i
-                                                                class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="#." target="_blank" class="social-icon"> <i
-                                                                class="fab fa-github"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
+                        <div class="col-lg-5 mil-up">
+                            <div class="mil-ai-logos-container" id="aiPhysicsContainer">
+                                <div class="mil-ai-logo" id="aiLogo1">
+                                    <img src="img/SVG's/chatgpt-logo.svg" alt="ChatGPT" class="scalable">
+                                    <h6>ChatGPT</h6>
                                 </div>
-
+                                <div class="mil-ai-logo" id="aiLogo2">
+                                    <img src="img/SVG's/gemini-logo.svg" alt="Gemini" class="scalable">
+                                    <h6>Gemini</h6>
+                                </div>
+                                <div class="mil-ai-logo" id="aiLogo3">
+                                    <img src="img/SVG's/astral-logo.svg" alt="Astral" class="scalable">
+                                    <h6>Astral</h6>
+                                </div>
+                                <div class="mil-ai-logo" id="aiLogo4">
+                                    <img src="img/SVG's/claude-logo.svg" alt="Claude Opus 4" class="scalable">
+                                    <h6>Claude</h6>
+                                </div>
+                                <div class="mil-ai-logo" id="aiLogo5">
+                                    <img src="img/SVG's/grok-logo.svg" alt="Grok 3" class="scalable">
+                                    <h6>Grok</h6>
+                                </div>
+                                <div class="mil-ai-logo" id="aiLogo6">
+                                    <img src="img/SVG's/llama-logo.svg" alt="Llama" class="scalable">
+                                    <h6>Llama</h6>
+                                </div>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- team end -->
+            <!-- AI section end -->
+
+            <!-- Reviews Section -->
+            <section class="mil-p-60-0">
+                <div class="container">
+                    <h2 class="mil-up mil-mb-60 text-center">Client & Collaborator Reviews</h2>
+
+                    <div class="mil-reviews-container">
+                        <div class="mil-reviews-track">
+                            <!-- Review 1 -->
+                            <div class="mil-review-card">
+                                <div class="mil-review-content">
+                                    <p>"Prompt: Wat betekent correlatie"<br><br>Rares provided a concise and accurate explanation of statistical correlation. Rating: 4/5</p>
+                                </div>
+                                <div class="mil-review-author">
+                                    <div>
+                                        <h5>Education Evaluation</h5>
+                                        <p>December 15th, 2024</p>
+                                        <div class="mil-review-rating">★★★★☆</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Review 2 -->
+                            <div class="mil-review-card">
+                                <div class="mil-review-content">
+                                    <p>"Prompt: Wat is de betekenis van het getal 420"<br><br>Perfect explanation of both numerical and cultural context. Rating: 5/5</p>
+                                </div>
+                                <div class="mil-review-author">
+                                    <div>
+                                        <h5>Education Evaluation</h5>
+                                        <p>January 5th, 2025</p>
+                                        <div class="mil-review-rating">★★★★★</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Review 3 -->
+                            <div class="mil-review-card">
+                                <div class="mil-review-content">
+                                    <p>"Prompt: Hoeveel is 16,50% van €3170?"<br><br>Correct calculation with clear step-by-step explanation. Rating: 4/5</p>
+                                </div>
+                                <div class="mil-review-author">
+                                    <div>
+                                        <h5>Education Evaluation</h5>
+                                        <p>January 22nd, 2025</p>
+                                        <div class="mil-review-rating">★★★★☆</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Review 4 -->
+                            <div class="mil-review-card">
+                                <div class="mil-review-content">
+                                    <p>"Prompt: Als mijn gemidelde cijfer een 6 is..."<br><br>Accurate but could have been more detailed. Rating: 3/5</p>
+                                </div>
+                                <div class="mil-review-author">
+                                    <div>
+                                        <h5>Education Evaluation</h5>
+                                        <p>February 10th, 2025</p>
+                                        <div class="mil-review-rating">★★★☆☆</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Review 5 -->
+                            <div class="mil-review-card">
+                                <div class="mil-review-content">
+                                    <p>"Prompt: Waarom moet je een antibioticakuur afmaken"<br><br>Medically accurate explanation. Rating: 3/5</p>
+                                </div>
+                                <div class="mil-review-author">
+                                    <div>
+                                        <h5>Education Evaluation</h5>
+                                        <p>February 28th, 2025</p>
+                                        <div class="mil-review-rating">★★★☆☆</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Review 6 -->
+                            <div class="mil-review-card">
+                                <div class="mil-review-content">
+                                    <p>"Prompt: You are an AI programming assistant..."<br><br>Solid solution but missed edge cases. Rating: 3/5</p>
+                                </div>
+                                <div class="mil-review-author">
+                                    <div>
+                                        <h5>[Project Censored]</h5>
+                                        <p>March 15th, 2025</p>
+                                        <div class="mil-review-rating">★★★☆☆</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Review 7 -->
+                            <div class="mil-review-card">
+                                <div class="mil-review-content">
+                                    <p>"Prompt: You are an AI programming assistant..."<br><br>Exceptional solution with detailed comments. Rating: 5/5</p>
+                                </div>
+                                <div class="mil-review-author">
+                                    <div>
+                                        <h5>[Project Censored]</h5>
+                                        <p>April 1st, 2025</p>
+                                        <div class="mil-review-rating">★★★★★</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Review 8 -->
+                            <div class="mil-review-card">
+                                <div class="mil-review-content">
+                                    <p>"Prompt: You are an AI programming assistant..."<br><br>Good implementation with minor improvements. Rating: 4/5</p>
+                                </div>
+                                <div class="mil-review-author">
+                                    <div>
+                                        <h5>[Project Censored]</h5>
+                                        <p>April 18th, 2025</p>
+                                        <div class="mil-review-rating">★★★★☆</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Review 9 -->
+                            <div class="mil-review-card">
+                                <div class="mil-review-content">
+                                    <p>"Prompt: You are an AI programming assistant..."<br><br>Flawless solution with optimal performance. Rating: 5/5</p>
+                                </div>
+                                <div class="mil-review-author">
+                                    <div>
+                                        <h5>[Project Censored]</h5>
+                                        <p>May 5th, 2025</p>
+                                        <div class="mil-review-rating">★★★★★</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Review 10 -->
+                            <div class="mil-review-card">
+                                <div class="mil-review-content">
+                                    <p>"Prompt: is this a good traveling plan fo rindia?"<br><br>Comprehensive itinerary with safety tips. Rating: 4/5</p>
+                                </div>
+                                <div class="mil-review-author">
+                                    <div>
+                                        <h5>Travel Planning</h5>
+                                        <p>May 20th, 2025</p>
+                                        <div class="mil-review-rating">★★★★☆</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Review 11 -->
+                            <div class="mil-review-card">
+                                <div class="mil-review-content">
+                                    <p>"Prompt: Using the provided flowchart..."<br><br>Perfect simulation with error handling. Rating: 5/5</p>
+                                </div>
+                                <div class="mil-review-author">
+                                    <div>
+                                        <h5>AI Assistant Project</h5>
+                                        <p>May 25th, 2025</p>
+                                        <div class="mil-review-rating">★★★★★</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Reviews Section end -->
+
+            <script>
+                // Force-directed graph animation for AI logos
+                document.addEventListener('DOMContentLoaded', () => {
+                    const container = document.querySelector('.mil-ai-logos-container');
+                    const logos = document.querySelectorAll('.mil-ai-logo');
+
+                    // Physics parameters
+                    const physics = {
+                        gravity: 0.05,
+                        friction: 0.99,
+                        bounce: 0.8,
+                        maxSpeed: 6,
+                        repulsion: 100, // Repulsion force strength
+                        attraction: 0.1, // Attraction force strength
+                        minDistance: 150,
+                        edgeDistance: 50 // Distance from container edges
+                    };
+
+                    // Initialize logo objects
+                    const logoObjects = Array.from(logos).map(logo => {
+                        const rect = logo.getBoundingClientRect();
+                        return {
+                            element: logo,
+                            x: 0,
+                            y: 0,
+                            vx: 0,
+                            vy: 0,
+                            width: rect.width,
+                            height: rect.height
+                        };
+                    });
+
+                    // Spread initial positions in a grid
+                    const cols = Math.ceil(Math.sqrt(logoObjects.length));
+                    const rows = Math.ceil(logoObjects.length / cols);
+                    const cellWidth = container.clientWidth / cols;
+                    const cellHeight = container.clientHeight / rows;
+
+                    logoObjects.forEach((obj, i) => {
+                        const col = i % cols;
+                        const row = Math.floor(i / cols);
+                        obj.x = col * cellWidth + (cellWidth - obj.width) / 2;
+                        obj.y = row * cellHeight + (cellHeight - obj.height) / 2;
+                        obj.element.style.transform = `translate(${obj.x}px, ${obj.y}px)`;
+                    });
+
+                    // Apply forces
+                    function applyForces() {
+                        // Reset acceleration
+                        logoObjects.forEach(obj => {
+                            obj.ax = 0;
+                            obj.ay = 0;
+                        });
+
+                        // Repulsion between all pairs
+                        for (let i = 0; i < logoObjects.length; i++) {
+                            for (let j = i + 1; j < logoObjects.length; j++) {
+                                const obj1 = logoObjects[i];
+                                const obj2 = logoObjects[j];
+
+                                // Calculate distance between centers
+                                const dx = (obj1.x + obj1.width/2) - (obj2.x + obj2.width/2);
+                                const dy = (obj1.y + obj1.height/2) - (obj2.y + obj2.height/2);
+                                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                                // Minimum distance to prevent overlap
+                                const minDistance = physics.minDistance;
+
+                                if (distance < minDistance) {
+                                    // Normalize direction
+                                    const nx = dx / distance;
+                                    const ny = dy / distance;
+
+                                    // Calculate repulsion force (inverse square)
+                                    const force = physics.repulsion / Math.max(distance * distance, 0.1);
+
+                                    // Apply repulsion
+                                    obj1.ax += nx * force;
+                                    obj1.ay += ny * force;
+                                    obj2.ax -= nx * force;
+                                    obj2.ay -= ny * force;
+                                } else {
+                                    // Apply weak attraction to form clusters
+                                    const force = physics.attraction * distance / 1000;
+                                    obj1.ax -= nx * force;
+                                    obj1.ay -= ny * force;
+                                    obj2.ax += nx * force;
+                                    obj2.ay += ny * force;
+                                }
+                            }
+                        }
+
+                        // Edge repulsion
+                        logoObjects.forEach(obj => {
+                            // Left edge
+                            if (obj.x < physics.edgeDistance) {
+                                const force = physics.repulsion / Math.max(obj.x * obj.x, 0.1);
+                                obj.ax += force;
+                            }
+                            // Right edge
+                            if (obj.x + obj.width > container.clientWidth - physics.edgeDistance) {
+                                const force = physics.repulsion / Math.max((container.clientWidth - obj.x - obj.width) ** 2, 0.1);
+                                obj.ax -= force;
+                            }
+                            // Top edge
+                            if (obj.y < physics.edgeDistance) {
+                                const force = physics.repulsion / Math.max(obj.y * obj.y, 0.1);
+                                obj.ay += force;
+                            }
+                            // Bottom edge
+                            if (obj.y + obj.height > container.clientHeight - physics.edgeDistance) {
+                                const force = physics.repulsion / Math.max((container.clientHeight - obj.y - obj.height) ** 2, 0.1);
+                                obj.ay -= force;
+                            }
+                        });
+                    }
+
+                    // Animation loop
+                    function animate() {
+                        applyForces();
+
+                        logoObjects.forEach(obj => {
+                            // Update velocity with acceleration
+                            obj.vx = (obj.vx + obj.ax) * physics.friction;
+                            obj.vy = (obj.vy + obj.ay + physics.gravity) * physics.friction;
+
+                            // Limit speed
+                            const speed = Math.sqrt(obj.vx * obj.vx + obj.vy * obj.vy);
+                            if (speed > physics.maxSpeed) {
+                                obj.vx = (obj.vx / speed) * physics.maxSpeed;
+                                obj.vy = (obj.vy / speed) * physics.maxSpeed;
+                            }
+
+                            // Update position
+                            obj.x += obj.vx;
+                            obj.y += obj.vy;
+
+                            // Apply position
+                            obj.element.style.transform = `translate(${obj.x}px, ${obj.y}px)`;
+                        });
+
+                        requestAnimationFrame(animate);
+                    }
+
+                    // Start animation
+                    animate();
+
+                    // Handle window resize
+                    window.addEventListener('resize', () => {
+                        // Reset positions to grid
+                        const cols = Math.ceil(Math.sqrt(logoObjects.length));
+                        const rows = Math.ceil(logoObjects.length / cols);
+                        const cellWidth = container.clientWidth / cols;
+                        const cellHeight = container.clientHeight / rows;
+
+                        logoObjects.forEach((obj, i) => {
+                            const col = i % cols;
+                            const row = Math.floor(i / cols);
+                            obj.x = col * cellWidth + (cellWidth - obj.width) / 2;
+                            obj.y = row * cellHeight + (cellHeight - obj.height) / 2;
+                            obj.vx = 0;
+                            obj.vy = 0;
+                            obj.element.style.transform = `translate(${obj.x}px, ${obj.y}px)`;
+                        });
+                    });
+                });
+            </script>
+
+<style>
+/* Physics animation styles */
+#aiSection {
+    position: relative;
+    overflow: hidden;
+}
+
+.mil-ai-logos-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mil-ai-logo {
+    position: absolute;
+    text-align: center;
+    width: 100px;
+    transition: transform 0.1s linear;
+    z-index: 10;
+}
+
+.mil-ai-logo img {
+    width: 80px !important;
+    height: 80px !important;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.mil-ai-logo:hover img {
+    transform: scale(1.2) rotate(5deg);
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
+}
+</style>
 
             <!-- footer -->
             <footer class="mil-dark-bg">
@@ -665,41 +1144,6 @@
             <!-- hidden elements -->
             <div class="mil-hidden-elements">
                 <div class="mil-dodecahedron">
-                    <div class="mil-pentagon">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="mil-pentagon">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="mil-pentagon">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="mil-pentagon">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="mil-pentagon">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
                     <div class="mil-pentagon">
                         <div></div>
                         <div></div>

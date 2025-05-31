@@ -20,6 +20,43 @@
     <!-- page name -->
     <title>Innovative Portfolio - Showcase</title>
 
+    <style>
+      .mil-cover img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+        background: #f5f5f5;
+      }
+      
+      /* Image container fixes */
+      .mil-cover-frame {
+        position: relative;
+        padding-bottom: 75%; /* 4:3 aspect ratio */
+        height: 0;
+      }
+      
+      .mil-cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 2px solid red; /* Debug border */
+      }
+      
+      .mil-cover img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+      }
+    </style>
+
 </head>
 
 <body>
@@ -86,42 +123,17 @@
                                         <li><a href="home-1.html">Welcome to the Future</a></li>
                                     </ul>
                                 </li>
-
                                 <li class="mil-has-children mil-active">
-                                    <a href="#.">Innovative Portfolio</a>
-                                    <ul>
-                                        <li><a href="portfolio-1.html">Project Showcase</a></li>
-                                        <li><a href="portfolio-2.html">Virtual Repository</a></li>
-                                    </ul>
-                                </li>
-
-                                <li class="mil-has-children">
-                                    <a href="#.">Interactive Lab</a>
-                                    <ul>
-                                        <li><a href="lab.html">Code Playground</a></li>
-                                        <li><a href="minigames.html">Mini-Games</a></li>
-                                    </ul>
+                                    <a href="portfolio-1.html">Innovative Portfolio</a>
                                 </li>
                                 <li class="mil-has-children">
-                                    <a href="#.">Under the Hood</a>
-                                    <ul>
-                                        <li><a href="code-insights.html">Source Insights</a></li>
-                                        <li><a href="terminal.html">The Terminal</a></li>
-                                    </ul>
+                                    <a href="interactive-lab.html">Interactive Lab</a>
                                 </li>
                                 <li class="mil-has-children">
-                                    <a href="#.">Architecture &amp; Systems</a>
-                                    <ul>
-                                        <li><a href="architecture.html">Tech Stack</a></li>
-                                        <li><a href="systems.html">System Blueprints</a></li>
-                                    </ul>
+                                    <a href="home-1-under-the-hood.html">Under the Hood</a>
                                 </li>
                                 <li class="mil-has-children">
-                                    <a href="#.">Connect &amp; Collaborate</a>
-                                    <ul>
-                                        <li><a href="contact.html">Contact</a></li>
-                                        <li><a href="blog.html">Publications</a></li>
-                                    </ul>
+                                    <a href="contact.html">Connect &amp; Collaborate</a>
                                 </li>
                             </ul>
                         </nav>
@@ -142,12 +154,13 @@
                                         <h6 class="mil-muted mil-mb-30">Projects</h6>
 
                                         <ul class="mil-menu-list">
-                                            <li><a href="project-1.html" class="mil-light-soft">Interior design studio</a></li>
-                                            <li><a href="project-2.html" class="mil-light-soft">Home Security Camera</a></li>
-                                            <li><a href="project-3.html" class="mil-light-soft">Kemia Honest Skincare</a></li>
-                                            <li><a href="project-4.html" class="mil-light-soft">Cascade of Lava</a></li>
-                                            <li><a href="project-5.html" class="mil-light-soft">Air Pro by Molekule</a></li>
-                                            <li><a href="project-6.html" class="mil-light-soft">Tony's Chocolonely</a></li>
+                                            <li><a href="project-1.html" class="mil-light-soft">MINA Autonomous Data Driven Robot</a></li>
+                                            <li><a href="project-2.html" class="mil-light-soft">8 Ball Snooker JavaScript Game</a></li>
+                                            <li><a href="project-2.html" class="mil-light-soft">Accounting Application System RESTful API</a></li>
+                                            <li><a href="project-2.html" class="mil-light-soft">Advanced .NET MAUI Threading Techniques</a></li>
+                                            <li><a href="project-2.html" class="mil-light-soft">Java Design Patterns in Action</a></li>
+                                            <li><a href="project-2.html" class="mil-light-soft">BigShopper: Bol.com Price-Scraper</a></li>
+                                            <li><a href="project-2.html" class="mil-light-soft">C# WinForms Algorithmic Order</a></li>
                                         </ul>
 
                                     </div>
@@ -156,10 +169,9 @@
                                         <h6 class="mil-muted mil-mb-30">Useful links</h6>
 
                                         <ul class="mil-menu-list">
-                                            <li><a href="#." class="mil-light-soft">Privacy Policy</a></li>
-                                            <li><a href="#." class="mil-light-soft">Terms and conditions</a></li>
-                                            <li><a href="#." class="mil-light-soft">Cookie Policy</a></li>
-                                            <li><a href="#." class="mil-light-soft">Careers</a></li>
+                                            <li><a href="privacy-policy.html" class="mil-light-soft">Privacy Policy</a></li>
+                                            <li><a href="terms-and-conditions.html" class="mil-light-soft">Terms and conditions</a></li>
+                                            <li><a href="cookie-policy.html" class="mil-light-soft">Cookie Policy</a></li>
                                         </ul>
 
                                     </div>
@@ -169,18 +181,12 @@
 
                                     <div class="col-lg-4 mil-mb-60">
 
-                                        <h6 class="mil-muted mil-mb-30">Canada</h6>
+                                        <h6 class="mil-muted mil-mb-30">Netherlands</h6>
 
-                                        <p class="mil-light-soft mil-up">71 South Los Carneros Road, California <span class="mil-no-wrap">+51 174 705 812</span></p>
-
-                                    </div>
-                                    <div class="col-lg-4 mil-mb-60">
-
-                                        <h6 class="mil-muted mil-mb-30">Germany</h6>
-
-                                        <p class="mil-light-soft">Leehove 40, 2678 MC De Lier, Netherlands <span class="mil-no-wrap">+31 174 705 811</span></p>
+                                        <p class="mil-light-soft mil-up">Arve 104, Emmen </p>
 
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -257,8 +263,7 @@
                                 </div>
                                 <div class="mil-descr">
                                     <div class="mil-labels mil-up mil-mb-15">
-                                        <div class="mil-label mil-upper mil-accent">Developing</div>
-                                        <div class="mil-label mil-upper">may 18 2023</div>
+                                        <div class="mil-label mil-upper mil-accent">Engineering</div>
                                     </div>
                                     <h4 class="mil-up">Autonomous data driven service robot.</h4>
                                 </div>
@@ -269,15 +274,14 @@
                             <a href="project-1.html" class="mil-portfolio-item mil-more mil-mb-60">
                                 <div class="mil-cover-frame mil-vert mil-up">
                                     <div class="mil-cover">
-                                        <img src="img/works/dyalo-flyier.gif" alt="cover">
+                                        <img src="img/projects%20images/8%20ball%20pool.png" alt="cover">
                                     </div>
                                 </div>
                                 <div class="mil-descr">
                                     <div class="mil-labels mil-up mil-mb-15">
-                                        <div class="mil-label mil-upper mil-accent">Branding</div>
-                                        <div class="mil-label mil-upper">may 24 2023</div>
+                                        <div class="mil-label mil-upper mil-accent">Game Developing</div>
                                     </div>
-                                    <h4 class="mil-up">Interior design studio</h4>
+                                    <h4 class="mil-up">8 Ball Snooker JavaScript Game</h4>
                                 </div>
                             </a>
                         </div>
@@ -286,15 +290,14 @@
                             <a href="project-1.html" class="mil-portfolio-item mil-more mil-mb-60">
                                 <div class="mil-cover-frame mil-vert mil-up">
                                     <div class="mil-cover">
-                                        <img src="img/works/dyalo-flyier.gif" alt="cover">
+                                        <img src="img/projects%20images/RESTful%20API.png" alt="cover">
                                     </div>
                                 </div>
                                 <div class="mil-descr">
                                     <div class="mil-labels mil-up mil-mb-15">
-                                        <div class="mil-label mil-upper mil-accent">Branding</div>
-                                        <div class="mil-label mil-upper">may 24 2023</div>
+                                        <div class="mil-label mil-upper mil-accent">Backend API Engineering</div>
                                     </div>
-                                    <h4 class="mil-up">Interior design studio</h4>
+                                    <h4 class="mil-up">Accounting Application System RESTful API</h4>
                                 </div>
                             </a>
                         </div>
@@ -303,15 +306,62 @@
                             <a href="project-1.html" class="mil-portfolio-item mil-more mil-mb-60">
                                 <div class="mil-cover-frame mil-vert mil-up">
                                     <div class="mil-cover">
-                                        <img src="img/works/dyalo-flyier.gif" alt="cover">
+                                        <img src="img/projects%20images/NET.png" alt="cover">
                                     </div>
                                 </div>
                                 <div class="mil-descr">
                                     <div class="mil-labels mil-up mil-mb-15">
-                                        <div class="mil-label mil-upper mil-accent">Branding</div>
-                                        <div class="mil-label mil-upper">may 24 2023</div>
+                                        <div class="mil-label mil-upper mil-accent">Cross-Platform UI Engineering</div>
                                     </div>
-                                    <h4 class="mil-up">Interior design studio</h4>
+                                    <h4 class="mil-up">Advanced .NET MAUI Threading Techniques</h4>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-5">
+                            <a href="project-1.html" class="mil-portfolio-item mil-more mil-mb-60">
+                                <div class="mil-cover-frame mil-vert mil-up">
+                                    <div class="mil-cover">
+                                        <img src="img/projects%20images/Java%20Design.png" alt="cover">
+                                    </div>
+                                </div>
+                                <div class="mil-descr">
+                                    <div class="mil-labels mil-up mil-mb-15">
+                                        <div class="mil-label mil-upper mil-accent">Software Architecture & Design Patterns</div>
+                                    </div>
+                                    <h4 class="mil-up">Java Design Patterns in Action</h4>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-5">
+                            <a href="project-1.html" class="mil-portfolio-item mil-more mil-mb-60">
+                                <div class="mil-cover-frame mil-vert mil-up">
+                                    <div class="mil-cover">
+                                        <img src="img/projects%20images/Bol.com.png" alt="cover">
+                                    </div>
+                                </div>
+                                <div class="mil-descr">
+                                    <div class="mil-labels mil-up mil-mb-15">
+                                        <div class="mil-label mil-upper mil-accent">E-commerce Web Scraping & Data Engineering</div>
+                                    </div>
+                                    <h4 class="mil-up">BigShopper: Bol.com Price-Scraper</h4>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-5">
+                            <a href="project-1.html" class="mil-portfolio-item mil-more mil-mb-60">
+                                <div class="mil-cover-frame mil-vert mil-up">
+                                    <div class="mil-cover">
+                                        <img src="img/projects%20images/WinForms.png" alt="cover">
+                                    </div>
+                                </div>
+                                <div class="mil-descr">
+                                    <div class="mil-labels mil-up mil-mb-15">
+                                        <div class="mil-label mil-upper mil-accent">Algorithmic Development</div>
+                                    </div>
+                                    <h4 class="mil-up">C# WinForms Algorithmic Order</h4>
                                 </div>
                             </a>
                         </div>
@@ -359,30 +409,6 @@
                                 <div class="row justify-content-end">
                                     <div class="col-md-6 col-lg-7">
 
-                                        <nav class="mil-footer-menu mil-mb-60">
-                                            <ul>
-                                                <li class="mil-up mil-active">
-                                                    <a href="home-1.html">Homepage</a>
-                                                </li>
-                                                <li class="mil-up">
-                                                    <a href="portfolio-1.html">Innovative Portfolio</a>
-                                                </li>
-                                                <li class="mil-up">
-                                                    <a href="services.html">Interactive Lab</a>
-                                                </li>
-                                                <li class="mil-up">
-                                                    <a href="contact.html">Under the Hood</a>
-                                                </li>
-                                                <li class="mil-up">
-                                                    <a href="blog.html">Architecture & Systems</a>
-                                                </li>
-
-                                                <li class="mil-up">
-                                                    <a href="blog.html">Contact & Collaborate</a>
-                                                </li>
-                                            </ul>
-                                        </nav>
-
                                     </div>
                                     <div class="col-md-6 col-lg-5">
 
@@ -420,7 +446,7 @@
                             <div class="col-md-4 col-lg-6 mil-mb-60">
 
                                 <div class="mil-vert-between">
-                                    <p class="mil-light-soft mil-up">© 2025 Zyphyr Cloud Technologies. All Rights Reserved.</p>
+                                    <p class="mil-light-soft mil-up"> 2025 Zyphyr Cloud Technologies. All Rights Reserved.</p>
                                 </div>
 
                             </div>
@@ -433,13 +459,6 @@
             <!-- hidden elements -->
             <div class="mil-hidden-elements">
                 <div class="mil-dodecahedron">
-                    <div class="mil-pentagon">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
                     <div class="mil-pentagon">
                         <div></div>
                         <div></div>
