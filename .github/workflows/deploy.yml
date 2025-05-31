@@ -1,0 +1,46 @@
+name: Deploy to Bluehost
+
+# Avvia il workflow a ogni push sulla branch main
+on:
+  push:
+    branches: [main]          # cambia se la tua branch di produzione è diversa
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest    # runner GitHub standard
+
+    # ↘ Se usi più environment (es. staging/prod) aggiungi:
+    # environment: production
+
+    steps:
+      # 1️⃣ Clona il repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2️⃣ Installa Node e builda il progetto
+      #    (se non ti serve Node elimina questi due step)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies & build
+        run: |
+          npm ci            # oppure pnpm install / yarn install
+          npm run build     # deve produrre la cartella dist/
+
+      # 3️⃣ Evita il prompt "Are you sure...": registra l'host SSH
+      - name: Add Bluehost host to known_hosts
+        run: ssh-keyscan -p ${{ secrets.BLUEHOST_PORT }} ${{ secrets.BLUEHOST_HOST }} >> ~/.ssh/known_hosts
+
+      # 4️⃣ Copia (rsync) il risultato su Bluehost
+      - name: Deploy to Bluehost
+        uses: easingthemes/ssh-deploy@v3         # action marketplace
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.BLUEHOST_KEY }}
+          REMOTE_HOST:     ${{ secrets.BLUEHOST_HOST }}
+          REMOTE_USER:     ${{ secrets.BLUEHOST_USER }}
+          REMOTE_PORT:     ${{ secrets.BLUEHOST_PORT }}
+          SOURCE:          "dist/"               # cartella locale prodotta dal build
+          TARGET:          ${{ secrets.BLUEHOST_TARGET }}
+          ARGS:            "-avz --delete"       # --delete rimuove file non più presenti
